@@ -1,9 +1,19 @@
 const musicGenres = {
-  gender1: "Rock",
-  gender2: "Country",
-  gender3: "Pop",
-  gender4: "Jazz",
-  gender5: "Electronic"
+  gender1: {
+    text: "Rock",
+    color: ""},
+  gender2: {
+    text: "Country",
+    color: ""},
+  gender3: {
+    text: "Pop",
+    color: ""},
+  gender4: {
+    text: "Jazz",
+    color: ""},
+  gender5: {
+    text: "Electronic",
+    color: ""}
  };
 
 let currentGenres = {
@@ -48,7 +58,7 @@ function removeGenreFromList(sGenre){
 }
 
 function getMusicGenre(sMusicGenreProperty){
-  return musicGenres[sMusicGenreProperty];
+  return musicGenres[sMusicGenreProperty].text;
 }
 
 function addGender(){
