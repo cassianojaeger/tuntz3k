@@ -1,14 +1,33 @@
 const musicGenres = {
   gender1: "Rock",
-  gender2: "Blues",
-  gender3: "Soul",
+  gender2: "Country",
+  gender3: "Pop",
   gender4: "Jazz",
+  gender5: "Electronic"
  };
 
 let currentGenres = {
   genre1: "",
   genre2: "",
 }
+
+function insertTextInButton(sText, oButton){
+  oButton.textContent = sText;
+}
+
+function initializeMusicButtons(){
+  let aButtons = $(".music-button");
+  for (let button in aButtons){
+    let currentButton = aButtons[button];
+    let sGenre        = getMusicGenre(currentButton.id);
+    insertTextInButton(sGenre, currentButton);
+  };
+}
+
+$(document).ready(function(){
+  initializeMusicButtons();
+});
+
 
 function isGenreInList(sGenre){
   return currentGenres.genre1 == sGenre || currentGenres.genre2 == sGenre;
@@ -42,5 +61,31 @@ function addGender(){
     addGenreInList(sMusicGenre);
   }
   
-  console.log(currentGenres);
+  changeGenreInView();
+}
+
+function changeHeaderText({text: sText, objectId: sId}){
+  let header = $(sId);
+  header.text(sText);
+}
+
+function changeGenreInView(){
+  let sId = "#genre-playing";
+  let sText;
+  if(isTwoGenres()){
+    sText = currentGenres.genre1 + "-" + currentGenres.genre2;
+  } else if(isOneGenre()){
+    sText = currentGenres.genre1;
+  } else {
+    sText = "Pick Something :D";
+    }
+  changeHeaderText({text: sText, objectId: sId});
+}
+
+function isTwoGenres(){
+  return (currentGenres.genre2 !== "");
+}
+
+function isOneGenre(){
+  return (currentGenres.genre1 !== "");
 }

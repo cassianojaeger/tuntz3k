@@ -7,14 +7,18 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: 4fr 1fr;
-  background-color: green;
-  
+  background-color: white;
+}
+
+body h1, h2, h3{
+  color: black;
+  text-shadow: 0px 0px 10px gray;
 }
 
 #menu {
   display: grid;
   padding: 2vw;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   background-color: blue;
   grid-gap: 2vw;
 }
@@ -53,6 +57,9 @@ body {
   background-color: pink;
 }
 
+#gender5{
+  backgorund-color: green;
+}
 
 .music-button {
     position: relative;
