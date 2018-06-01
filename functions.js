@@ -294,12 +294,10 @@ function determineMixedGenre(separator){
 }
 
 function volumeUp() {
-    myFunction();
     audioTag.volume = audioTag.volume + .1;
 }
 
 function volumeDown() {
-    myFunction();
     audioTag.volume = audioTag.volume - .1;
 }
 
