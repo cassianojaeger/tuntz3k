@@ -7,7 +7,7 @@ var currentPlaylistInformation;
 const musicInformation = {
     rock: {
         musician: ['Algum nome', null],
-        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
+        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
         albumImage: ['resources/images/rock.jpg', null],
         backgroundImage: [null, null]
     },
@@ -220,7 +220,7 @@ function playGenreMusic() {
 }
 
 function playNextSong() {
-    if (currentPlaylistIndex <= len) {
+    if (currentPlaylistIndex == len) {
         currentPlaylistIndex = 0;
     } else {
         currentPlaylistIndex++;
