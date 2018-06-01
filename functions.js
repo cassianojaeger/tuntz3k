@@ -155,7 +155,7 @@ function addGenreInList(sGenre) {
 
 function removeGenreFromList(sGenre) {
     if(isOneGenre()){
-        audioTag.pause();
+        pauseSong();
     }
 
     if (currentGenres.genre1 === sGenre) {
@@ -231,7 +231,7 @@ function playNextSong() {
 function run(plInformation, player) {
     player.src = getMusicFile(plInformation);
     audioTag.load();
-    audioTag.play();
+    playSong();
 }
 
 function getMusicFile(currentPlaylist) {
@@ -283,6 +283,13 @@ function determineMixedGenre(){
         case 'rock_jazz':
             return 'jazz_fusion';
     }
+}
+function pauseSong() {
+    audioTag.pause();
+}
+
+function playSong() {
+    audioTag.play();
 }
 
 function isTwoGenres() {
