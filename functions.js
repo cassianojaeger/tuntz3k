@@ -1,97 +1,98 @@
 var audioTag;
 var currentPlaylist;
-var currentTracks;
 var currentPlaylistIndex = 0;
+var currentPlaylistInformation;
+
 
 const musicInformation = {
     rock: {
         musician: 'Algum nome',
-        audioFile: 'resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3',
+        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
         albumImage: 'resources/images/alguma.jpg',
         backgroundImage: null
     },
     jazz: {
         musician: null,
-        audioFile: null,
+        audioFile: ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     electronic: {
         musician: null,
-        audioFile: null,
+        audioFile: ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     country: {
         musician: null,
-        audioFile: null,
+        audioFile: ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     pop: {
         musician: null,
-        audioFile: null,
+        audioFile: ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
 
     country_rock: {
         musician: 'Algum nome',
-        audioFile: 'resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3',
+        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
         albumImage: 'resources/images/alguma.jpg',
         backgroundImage: null
     },
     southern_jazz: {
         musician: null,
-        audioFile: 'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3',
+        audioFile: ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     electronic_country: {
         musician: null,
-        audioFile: 'resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3',
+        audioFile: ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     country_pop: {
         musician: null,
-        audioFile: 'resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3',
+        audioFile: ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     pop_rock: {
         musician: null,
-        audioFile: 'resources/audios/poprock%20Nickelback%20-%20Photograph.mp3',
+        audioFile: ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     jazz_pop: {
         musician: null,
-        audioFile: 'resources/audios/jazzpop%20george-duke-shine-on.mp3',
+        audioFile: ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     eletro_pop: {
         musician: null,
-        audioFile: 'resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3',
+        audioFile: ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     nu_jazz: {
         musician: null,
-        audioFile: 'resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3',
+        audioFile: ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     electronic_rock: {
         musician: null,
-        audioFile: 'resources/audios/eletronicrock%20M83%20Reunion.mp3',
+        audioFile: ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
         albumImage: null,
         backgroundImage: null
     },
     jazz_fusion: {
         musician: null,
-        audioFile: 'resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3',
+        audioFile: ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
         albumImage: null,
         backgroundImage: null
     }
@@ -206,24 +207,33 @@ function changeGenreInView() {
 function playGenreMusic() {
     currentPlaylistIndex = 0;
     audioTag = $('audio')[0];
+
     currentPlaylist = $(resolveCurrentPlaylist());
-    currentTracks = currentPlaylist.find('li a');
-    len = currentTracks.length - 1;
+    currentPlaylistInformation = musicInformation[currentPlaylist.attr('id').toLowerCase()];
+
+    len = currentPlaylistInformation.audioFile.length - 1;
+
     audioTag.volume = 1;
 
-    let musicLinkComponent = currentPlaylist.find('a');
-
-    run(musicLinkComponent, audioTag, currentPlaylist);
+    run(currentPlaylistInformation, audioTag);
     audioTag.addEventListener('ended', function (e) {
-        if (current == len) {
-            current = 0;
-            link = currentPlaylist.find('a')[0];
+        if (currentPlaylistIndex <= len) {
+            currentPlaylistIndex = 0;
         } else {
-            current++;
-            link = currentPlaylist.find('a')[current];
+            currentPlaylistIndex++;
         }
-        run($(link), audioTag, currentPlaylist);
+        run(currentPlaylistInformation, audioTag, currentPlaylist);
     });
+}
+
+function run(plInformation, player) {
+    player.src = getMusicFile(plInformation);
+    audioTag.load();
+    audioTag.play();
+}
+
+function getMusicFile(currentPlaylist) {
+    return currentPlaylist.audioFile[currentPlaylistIndex];
 }
 
 function resolveCurrentPlaylist() {
@@ -237,55 +247,40 @@ function resolveCurrentPlaylist() {
 }
 
 function determineMixedGenre(){
-    let mixedGenre = currentGenres.genre1.concat('-', currentGenres.genre2)
+    let mixedGenre = currentGenres.genre1.concat('_', currentGenres.genre2)
 
     switch (mixedGenre.toLowerCase()){
-        case 'pop-rock':
-        case 'rock-pop':
-            return 'pop-rock';
-        case 'country-rock':
-        case 'rock-country':
-            return 'country-rock'
-        case 'country-jazz':
-        case 'jazz-country':
-            return 'southern-jazz';
-        case 'electronic-country':
-        case 'country-electronic':
-            return 'electronic-country';
-        case 'country-pop':
-        case 'pop-country':
-            return 'country-pop';
-        case 'jazz-pop':
-        case 'pop-jazz':
-            return 'jazz-pop';
-        case 'electronic-pop':
-        case 'pop-electronic':
-            return 'eletro-pop';
-        case 'jazz-electronic':
-        case 'electronic-jazz':
-            return 'nu-jazz';
-        case 'electronic-rock':
-        case 'rock-electronic':
-            return 'electronic-rock';
-        case 'jazz-rock':
-        case 'rock-jazz':
-            return 'jazz-fusion';
+        case 'pop_rock':
+        case 'rock_pop':
+            return 'pop_rock';
+        case 'country_rock':
+        case 'rock_country':
+            return 'country_rock'
+        case 'country_jazz':
+        case 'jazz_country':
+            return 'southern_jazz';
+        case 'electronic_country':
+        case 'country_electronic':
+            return 'electronic_country';
+        case 'country_pop':
+        case 'pop_country':
+            return 'country_pop';
+        case 'jazz_pop':
+        case 'pop_jazz':
+            return 'jazz_pop';
+        case 'electronic_pop':
+        case 'pop_electronic':
+            return 'eletro_pop';
+        case 'jazz_electronic':
+        case 'electronic_jazz':
+            return 'nu_jazz';
+        case 'electronic_rock':
+        case 'rock_electronic':
+            return 'electronic_rock';
+        case 'jazz_rock':
+        case 'rock_jazz':
+            return 'jazz_fusion';
     }
-}
-
-function run(musicLinkComponent, player, currentPlaylist) {
-    player.src = getMusicFile(currentPlaylist);
-    // player.src = musicLinkComponent.attr('href');
-    par = musicLinkComponent.parent();
-    par.addClass('active').siblings().removeClass('active');
-    audioTag.load();
-    audioTag.play();
-}
-
-function getMusicFile(currentPlaylist) {
-    let playlistName = currentPlaylist.attr('id');
-    let formattedMusicGenre = playlistName.replace("-", "_").toLowerCase();
-    return musicInformation[formattedMusicGenre].audioFile
 }
 
 function isTwoGenres() {
