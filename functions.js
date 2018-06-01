@@ -2,6 +2,7 @@ var audioTag;
 var currentPlaylist;
 var currentPlaylistIndex = 0;
 var currentPlaylistInformation;
+var status = 0;
 
 const musicInformation = {
     rock: {
@@ -238,6 +239,24 @@ function playGenreMusic() {
     audioTag.addEventListener('ended', playNextSong);
 }
 
+function run(plInformation, player) {
+    player.src = getMusicFile(plInformation);
+    audioTag.load();
+    handleMediaPlayButtonAction();
+}
+
+function handleMediaPlayButtonAction(pauseButton) {
+    if(pauseButtonPressed(pauseButton)){
+        pauseSong();
+        $("#play").attr("class","glyphicon glyphicon-play aligned")
+        status = 2;
+    }else {
+        playSong();
+        $("#play").attr("class", "glyphicon glyphicon-pause aligned")
+        status = 1;
+    }
+}
+
 function playNextSong() {
     if (currentPlaylistIndex == len) {
         currentPlaylistIndex = 0;
@@ -247,10 +266,13 @@ function playNextSong() {
     run(currentPlaylistInformation, audioTag, currentPlaylist);
 }
 
-function run(plInformation, player) {
-    player.src = getMusicFile(plInformation);
-    audioTag.load();
-    playSong();
+function playPreviousSong() {
+    if (currentPlaylistIndex == 0) {
+        currentPlaylistIndex = 0;
+    } else {
+        currentPlaylistIndex--;
+    }
+    run(currentPlaylistInformation, audioTag, currentPlaylist);
 }
 
 function resolveCurrentPlaylist() {
@@ -271,6 +293,16 @@ function determineMixedGenre(separator){
     return aGenre;
 }
 
+function volumeUp() {
+    myFunction();
+    audioTag.volume = audioTag.volume + .1;
+}
+
+function volumeDown() {
+    myFunction();
+    audioTag.volume = audioTag.volume - .1;
+}
+
 function pauseSong() {
     audioTag.pause();
 }
@@ -289,4 +321,8 @@ function isTwoGenres() {
 
 function isOneGenre() {
     return (currentGenres.genre1 !== "");
+}
+
+function pauseButtonPressed(pauseButton) {
+    return status == 1 && pauseButton === true;
 }

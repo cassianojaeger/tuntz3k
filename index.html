@@ -6,6 +6,7 @@
                 crossorigin="anonymous">
         </script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="media_buttons.css">
         <script src="functions.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,9 +22,12 @@
                     <h2>Now Playing</h2>
                     <h1 id="genre-playing">Pick Something :D</h1>
                     <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
-                    <button type="button" onclick="playNextSong()" class="btn btn-primary btn-lg btn-inline">Play Next Song!</button>
-                    <button type="button" onclick="pauseSong()" class="btn btn-primary btn-lg btn-inline">Stop song!</button>
-                    <button type="button" onclick="playSong()" class="btn btn-primary btn-lg btn-inline">Resume song!</button>
+
+                    <button onclick="handleMediaPlayButtonAction(true);" class="btn btn-custom"><span title="Play" id="play" class="glyphicon glyphicon-play aligned"></span></button>
+                    <button onclick="playPreviousSong();" class="btn btn-custom"><span id="play" class="glyphicon glyphicon-fast-backward aligned"></span></button>
+                    <button onclick="playNextSong();" class="btn btn-custom"><span id="play" class="glyphicon glyphicon-fast-forward aligned"></span></button>
+                    <button onclick="volumeUp();" class="btn btn-custom"><span title="Volume Up" id="volumeup" class="glyphicon glyphicon-plus aligned"></span></button>
+                    <button onclick="volumeDown();" class="btn btn-custom"><span title="Volume Down" id="volumedown" class="glyphicon glyphicon-minus aligned"></span></button>
                 </div>
             </div>
 
