@@ -3,7 +3,6 @@ var currentPlaylist;
 var currentPlaylistIndex = 0;
 var currentPlaylistInformation;
 
-
 const musicInformation = {
     rock: {
         musician: ['Algum nome', null],
@@ -35,7 +34,6 @@ const musicInformation = {
         albumImage: ['resources/images/pop.jpg', null],
         backgroundImage: [null, null]
     },
-
     country_rock: {
         musician: 'Algum nome',
         audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
@@ -207,8 +205,8 @@ function playGenreMusic() {
     currentPlaylistIndex = 0;
     audioTag = $('audio')[0];
 
-    currentPlaylist = $(resolveCurrentPlaylist());
-    currentPlaylistInformation = musicInformation[currentPlaylist.attr('id').toLowerCase()];
+    currentPlaylist = resolveCurrentPlaylist();
+    currentPlaylistInformation = musicInformation[currentPlaylist.toLowerCase()];
 
     len = currentPlaylistInformation.audioFile.length - 1;
 
@@ -245,7 +243,7 @@ function resolveCurrentPlaylist() {
     } else{
         genre = determineMixedGenre();
     }
-    return '#'.concat(genre);
+    return genre;
 }
 
 function determineMixedGenre(){
