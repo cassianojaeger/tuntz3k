@@ -204,12 +204,9 @@ function changeHeaderText({text: sText, objectId: sId}) {
 
 function getGenreCompleteText(){
     let sId = "#genre-playing";
-    let aText = [];
     let sText;
     if (isTwoGenres()) {
-        aText = [currentGenres.genre1, currentGenres.genre2];
-        aText.sort();
-        sText = aText.join("-");
+        sText = determineMixedGenre("-")
     } else if (isOneGenre()) {
         sText = currentGenres.genre1;
     } else {
@@ -256,38 +253,34 @@ function run(plInformation, player) {
     playSong();
 }
 
-function getMusicFile(currentPlaylist) {
-    return currentPlaylist.audioFile[currentPlaylistIndex];
-}
-
 function resolveCurrentPlaylist() {
     let genre;
     if(!isTwoGenres()){
         genre = currentGenres.genre1;
     } else{
-        genre = determineMixedGenre();
+        genre = determineMixedGenre("_");
     }
     return genre;
 }
 
-function determineMixedGenre(){
-    let mixedGenre = '';
-    let genre1 = currentGenres.genre1;
-    let genre2 = currentGenres.genre2;
-    
-    if(genre1 < genre2){
-        mixedGenre = genre1.concat('_', genre2)
-    }else{
-        mixedGenre = genre2.concat('_', genre1)
-    }
-    return mixedGenre;
+function determineMixedGenre(separator){
+    let aGenre = [currentGenres.genre1, currentGenres.genre2];
+    aGenre.sort();
+    aGenre = aGenre.join(separator)
+
+    return aGenre;
 }
+
 function pauseSong() {
     audioTag.pause();
 }
 
 function playSong() {
     audioTag.play();
+}
+
+function getMusicFile(currentPlaylist) {
+    return currentPlaylist.audioFile[currentPlaylistIndex];
 }
 
 function isTwoGenres() {
