@@ -5,94 +5,108 @@ var currentPlaylistInformation;
 
 const musicInformation = {
     rock: {
-        musician: ['Algum nome', null],
-        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
-        albumImage: ['resources/images/rock.jpg', null],
-        backgroundImage: [null, null]
+        musician        : ['Algum nome', null],
+        audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
+        albumImage      : ['resources/images/rock.jpg', null],
+        backgroundImage : [null, null]
     },
+
     jazz: {
-        musician: [null, null],
-        audioFile: ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
-        albumImage: ['resources/images/jazz.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
+        albumImage      : ['resources/images/jazz.jpg', null],
+        backgroundImage : [null, null]
     },
+
     electronic: {
-        musician: [null, null],
-        audioFile: ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
-        albumImage: ['resources/images/electronic.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
+        albumImage      : ['resources/images/electronic.jpg', null],
+        backgroundImage : [null, null]
     },
+
     country: {
-        musician: [null, null],
-        audioFile: ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
-        albumImage: ['resources/images/country.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
+        albumImage      : ['resources/images/country.jpg', null],
+        backgroundImage : [null, null]
     },
+
     pop: {
-        musician: [null, null],
-        audioFile: ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
-        albumImage: ['resources/images/pop.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
+        albumImage      : ['resources/images/pop.jpg', null],
+        backgroundImage : [null, null]
     },
+
     country_rock: {
-        musician: 'Algum nome',
-        audioFile: ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
-        albumImage: ['resources/images/countrypop.jpg', null],
-        backgroundImage: [null, null]
+        musician        : 'Algum nome',
+        audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
+        albumImage      : ['resources/images/countrypop.jpg', null],
+        backgroundImage : [null, null]
     },
+
     southern_jazz: {
-        musician: [null, null],
-        audioFile: ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
-        albumImage: ['resources/images/southernjazz.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
+        albumImage      : ['resources/images/southernjazz.jpg', null],
+        backgroundImage : [null, null]
     },
+
     electronic_country: {
-        musician: [null, null],
-        audioFile: ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
-        albumImage: 'resources/images/electroniccountry.jpg',
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
+        albumImage      : 'resources/images/electroniccountry.jpg',
+        backgroundImage : [null, null]
     },
+
     country_pop: {
-        musician: [null, null],
-        audioFile: ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
-        albumImage: ['resources/images/countrypop.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
+        albumImage      : ['resources/images/countrypop.jpg', null],
+        backgroundImage : [null, null]
     },
+
     pop_rock: {
-        musician: [null, null],
-        audioFile: ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
-        albumImage: ['resources/images/poprock.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
+        albumImage      : ['resources/images/poprock.jpg', null],
+        backgroundImage : [null, null]
     },
+
     jazz_pop: {
-        musician: [null, null],
-        audioFile: ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
-        albumImage: ['resources/images/jazzpop.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
+        albumImage      : ['resources/images/jazzpop.jpg', null],
+        backgroundImage : [null, null]
     },
+
     eletro_pop: {
-        musician: [null, null],
-        audioFile: ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
-        albumImage: ['resources/images/eletropop.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
+        albumImage      : ['resources/images/eletropop.jpg', null],
+        backgroundImage : [null, null]
     },
+
     nu_jazz: {
-        musician: [null, null],
-        audioFile: ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
-        albumImage: ['resources/images/nujazz.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
+        albumImage      : ['resources/images/nujazz.jpg', null],
+        backgroundImage : [null, null]
     },
+
     electronic_rock: {
-        musician: [null, null],
-        audioFile: ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
-        albumImage: ['resources/images/electronicrock.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
+        albumImage      : ['resources/images/electronicrock.jpg', null],
+        backgroundImage : [null, null]
     },
+
     jazz_fusion: {
-        musician: [null, null],
-        audioFile: ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
-        albumImage: ['resources/images/jazzfusion.jpg', null],
-        backgroundImage: [null, null]
+        musician        : [null, null],
+        audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
+        albumImage      : ['resources/images/jazzfusion.jpg', null],
+        backgroundImage : [null, null]
     }
 }
 
@@ -188,16 +202,26 @@ function changeHeaderText({text: sText, objectId: sId}) {
     header.text(sText);
 }
 
-function changeGenreInView() {
+function getGenreCompleteText(){
     let sId = "#genre-playing";
+    let aText = [];
     let sText;
     if (isTwoGenres()) {
-        sText = currentGenres.genre1 + "-" + currentGenres.genre2;
+        aText = [currentGenres.genre1, currentGenres.genre2];
+        aText.sort();
+        sText = aText.join("-");
     } else if (isOneGenre()) {
         sText = currentGenres.genre1;
     } else {
         sText = "Pick Something :D";
     }
+
+    return sText;
+}
+
+function changeGenreInView() {
+    let sId = "#genre-playing";
+    let sText = getGenreCompleteText;
     changeHeaderText({text: sText, objectId: sId});
 }
 

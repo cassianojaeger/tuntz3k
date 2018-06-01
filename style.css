@@ -101,4 +101,5 @@ body h1, h2, h3{
 
 .hidden-content {
     visibility: hidden;
+    display: none;
 }
