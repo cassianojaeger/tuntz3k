@@ -1,28 +1,74 @@
 <html>
     <head>
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                crossorigin="anonymous">
+        </script>
         <link rel="stylesheet" href="style.css">
         <script src="functions.js"></script>
-        <script src="jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+
     </head>
     <body>
-      <div id = "turntable">
-        <div id= "contents">
-          <div class="infos">
-            <h2>Now Playing</h2>
-            <h1 id="genre-playing">Pick Something :D</h1>
-            <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
-          </div>
+    <button id="playlist-1" onclick="listToPlaylist()" class="playlists">Play Songs Funky!</button><br>
+
+        <div class="hidden-content">
+
+            <ul id="playlist-1-list">
+                <li><a href="resources/audios/eletronicrock%20M83%20Reunion.mp3">Claps</a></li>
+            </ul>
+
+            <div id="basic-genres">
+                <ul id="Rock">
+                </ul>
+                <ul id="Jazz">
+                    <li><a href="resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3"></a></li>
+                </ul>
+                <ul id="Electronic">
+                    <li><a href="resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3"></a></li>
+                </ul>
+                <ul id="Country">
+                    <li><a href="resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3"></a></li>
+                </ul>
+                <ul id="Pop">
+                    <li><a href="resources/audios/poprock%20Nickelback%20-%20Photograph.mp3"></a></li>
+                </ul>
+            </div>
+
+            <div id="mixed-genres">
+                <ul id="country-rock"/>
+                <ul id="southern-jazz"/>
+                <ul id="electronic-country"/>
+                <ul id="country-pop"/>
+                <ul id="pop-rock"/>
+                <ul id="jazz-pop"/>
+                <ul id="eletro-pop"/>
+                <ul id="nu-jazz"/>
+                <ul id="electronic-rock"/>
+                <ul id="jazz-fusion"/>
+            </div>
         </div>
-        <div id = "menu">
-          <button id="gender1" onclick="addGender()" class="gender music-button"></button>
-          <button id="gender2" onclick="addGender()" class="gender music-button"></button>
-          <button id="gender3" onclick="addGender()" class="gender music-button"></button>
-          <button id="gender4" onclick="addGender()" class="gender music-button"></button>
-          <button id="gender5" onclick="addGender()" class="gender music-button"></button>
+        <div id="turntable">
+            <div id="contents">
+                <div class="infos">
+                    <h2>Now Playing</h2>
+                    <h1 id="genre-playing">Pick Something :D</h1>
+                    <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
+                </div>
+            </div>
+            <div id="menu">
+                <button id="gender1" onclick="addGender()" class="gender music-button"></button>
+                <button id="gender2" onclick="addGender()" class="gender music-button"></button>
+                <button id="gender3" onclick="addGender()" class="gender music-button"></button>
+                <button id="gender4" onclick="addGender()" class="gender music-button"></button>
+                <button id="gender5" onclick="addGender()" class="gender music-button"></button>
+            </div>
         </div>
-      </div>
+
+        <audio class="hidden-content" id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+            Sorry, your browser does not support HTML5 audio.
+        </audio>
     </body>
 </html>
