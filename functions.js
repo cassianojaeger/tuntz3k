@@ -247,40 +247,16 @@ function resolveCurrentPlaylist() {
 }
 
 function determineMixedGenre(){
-    let mixedGenre = currentGenres.genre1.concat('_', currentGenres.genre2)
-
-    switch (mixedGenre.toLowerCase()){
-        case 'pop_rock':
-        case 'rock_pop':
-            return 'pop_rock';
-        case 'country_rock':
-        case 'rock_country':
-            return 'country_rock'
-        case 'country_jazz':
-        case 'jazz_country':
-            return 'southern_jazz';
-        case 'electronic_country':
-        case 'country_electronic':
-            return 'electronic_country';
-        case 'country_pop':
-        case 'pop_country':
-            return 'country_pop';
-        case 'jazz_pop':
-        case 'pop_jazz':
-            return 'jazz_pop';
-        case 'electronic_pop':
-        case 'pop_electronic':
-            return 'eletro_pop';
-        case 'jazz_electronic':
-        case 'electronic_jazz':
-            return 'nu_jazz';
-        case 'electronic_rock':
-        case 'rock_electronic':
-            return 'electronic_rock';
-        case 'jazz_rock':
-        case 'rock_jazz':
-            return 'jazz_fusion';
+    let mixedGenre = '';
+    let genre1 = currentGenres.genre1;
+    let genre2 = currentGenres.genre2;
+    
+    if(genre1 < genre2){
+        mixedGenre = genre1.concat('_', genre2)
+    }else{
+        mixedGenre = genre2.concat('_', genre1)
     }
+    return mixedGenre;
 }
 function pauseSong() {
     audioTag.pause();
