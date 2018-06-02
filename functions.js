@@ -144,9 +144,9 @@ function insertTextInButton(sText, oButton) {
 }
 
 function initializeMusicButtons() {
-    let aButtons = $(".music-button");
-    for (let button in aButtons) {
-        let currentButton = aButtons[button];
+    let aButtons = $(".confetti-button");
+    for (let i = 0; i < aButtons.length; i++) {
+        let currentButton = aButtons[i];
         let sGenre = getMusicGenre(currentButton.id);
         insertTextInButton(sGenre, currentButton);
     };
@@ -154,6 +154,24 @@ function initializeMusicButtons() {
 
 $(document).ready(function () {
     initializeMusicButtons();
+
+    var animateButton = function(e) {
+
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+var classname = document.getElementsByClassName("confetti-button");
+
+for (var i = 0; i < classname.length; i++) {
+  classname[i].addEventListener('click', animateButton, false);
+}
 });
 
 
