@@ -120,14 +120,14 @@ const musicGenres = {
         beforeColor  : "#cc0000",
         afterColor   : "#ffb3b3",
         pressedColor : "#cc0000",
-        shadorColor  : "#ffad99",
+        shadorColor  : "#ffad99"
     },
     Country: {
         mainColor    : "#66ccff",
         beforeColor  : "#b3ccff",
         afterColor   : "#4d88ff",
         pressedColor : "#0099e6",
-        shadorColor  : "#cce6ff",
+        shadorColor  : "#cce6ff"
 
     },
     Pop: {
@@ -135,7 +135,7 @@ const musicGenres = {
         beforeColor  : "#ffccf2",
         afterColor   : "#ff66d9",
         pressedColor : "#990073",
-        shadorColor  : "#ffb3e6",
+        shadorColor  : "#ffb3e6"
 
     },
     Jazz: {
@@ -143,7 +143,7 @@ const musicGenres = {
         beforeColor  : "#ffd699",
         afterColor   : "#ffebcc",
         pressedColor : "#e68a00",
-        shadorColor  : "#ffe6cc",
+        shadorColor  : "#ffe6cc"
 
     },
     Electronic: {
@@ -151,18 +151,14 @@ const musicGenres = {
         beforeColor  : "#b3ffb3",
         afterColor   : "#4dff4d",
         pressedColor : "#008000",
-        shadorColor  : "#b3ffb3",
+        shadorColor  : "#b3ffb3"
     }
 };
 
 let currentGenres = {
     genre1: "",
-    genre2: "",
-}
-
-function insertTextInButton(sText, oButton) {
-    oButton.textContent = sText;
-}
+    genre2: ""
+};
 
 function createAllMusicButtons() {
 
@@ -228,7 +224,7 @@ $(document).ready(function () {
 
 
 function isGenreInList(sGenre) {
-    return currentGenres.genre1 == sGenre || currentGenres.genre2 == sGenre;
+    return currentGenres.genre1 === sGenre || currentGenres.genre2 === sGenre;
 }
 
 function addGenreInList(sGenre) {
@@ -344,21 +340,21 @@ function handleMediaPlayButtonAction(pauseButton) {
 }
 
 function playNextSong() {
-    if (currentPlaylistIndex == len) {
+    if (currentPlaylistIndex === len) {
         currentPlaylistIndex = 0;
     } else {
         currentPlaylistIndex++;
     }
-    run(currentPlaylistInformation, audioTag, currentPlaylist);
+    run(currentPlaylistInformation, audioTag);
 }
 
 function playPreviousSong() {
-    if (currentPlaylistIndex == 0) {
+    if (currentPlaylistIndex === 0) {
         currentPlaylistIndex = 0;
     } else {
         currentPlaylistIndex--;
     }
-    run(currentPlaylistInformation, audioTag, currentPlaylist);
+    run(currentPlaylistInformation, audioTag);
 }
 
 function resolveCurrentPlaylist() {
@@ -374,7 +370,7 @@ function resolveCurrentPlaylist() {
 function determineMixedGenre(separator){
     let aGenre = [currentGenres.genre1, currentGenres.genre2];
     aGenre.sort();
-    aGenre = aGenre.join(separator)
+    aGenre = aGenre.join(separator);
 
     return aGenre;
 }
@@ -408,5 +404,5 @@ function isOneGenre() {
 }
 
 function isPauseButtonPressed(pauseButton) {
-    return status == 1 && pauseButton === true;
+    return status === 1 && pauseButton === true;
 }
