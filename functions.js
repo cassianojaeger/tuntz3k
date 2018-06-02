@@ -7,106 +7,106 @@ var status = 0;
 const musicInformation = {
     rock: {
         musician        : ['Algum nome', null],
-        audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
-        albumImage      : ['resources/images/rock.jpg', null],
+        audioFile       : [ ,'resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3'],
+        albumImage      : ['resources/images/album/rock.jpg', null],
         backgroundImage : null
     },
 
     jazz: {
         musician        : [null, null],
         audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
-        albumImage      : ['resources/images/jazz.jpg', null],
+        albumImage      : ['resources/images/album/jazz.jpg', null],
         backgroundImage : null
     },
 
     electronic: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
-        albumImage      : ['resources/images/electronic.jpg', null],
+        albumImage      : ['resources/images/album/electronic.jpg', null],
         backgroundImage : null
     },
 
     country: {
         musician        : [null, null],
         audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
-        albumImage      : ['resources/images/country.jpg', null],
+        albumImage      : ['resources/images/album/country.jpg', null],
         backgroundImage : null
     },
 
     pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
-        albumImage      : ['resources/images/pop.jpg', null],
+        albumImage      : ['resources/images/album/pop.jpg', null],
         backgroundImage : null
     },
 
     country_rock: {
         musician        : 'Algum nome',
         audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
-        albumImage      : ['resources/images/countrypop.jpg', null],
+        albumImage      : ['resources/images/album/countrypop.jpg', null],
         backgroundImage : null
     },
 
     jazz_southern: {
         musician        : [null, null],
         audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
-        albumImage      : ['resources/images/southernjazz.jpg', null],
+        albumImage      : ['resources/images/album/southernjazz.jpg', null],
         backgroundImage : null
     },
 
     country_electronic: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
-        albumImage      : 'resources/images/electroniccountry.jpg',
+        albumImage      : 'resources/images/album/electroniccountry.jpg',
         backgroundImage : null
     },
 
     country_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
-        albumImage      : ['resources/images/countrypop.jpg', null],
+        albumImage      : ['resources/images/album/countrypop.jpg', null],
         backgroundImage : null
     },
 
     pop_rock: {
         musician        : [null, null],
         audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
-        albumImage      : ['resources/images/poprock.jpg', null],
+        albumImage      : ['resources/images/album/poprock.jpg', null],
         backgroundImage : null
     },
 
     jazz_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
-        albumImage      : ['resources/images/jazzpop.jpg', null],
+        albumImage      : ['resources/images/album/jazzpop.jpg', null],
         backgroundImage : null
     },
 
     eletro_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
-        albumImage      : ['resources/images/eletropop.jpg', null],
+        albumImage      : ['resources/images/album/eletropop.jpg', null],
         backgroundImage : null
     },
 
     jazz_nu: {
         musician        : [null, null],
         audioFile       : ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
-        albumImage      : ['resources/images/nujazz.jpg', null],
+        albumImage      : ['resources/images/album/nujazz.jpg', null],
         backgroundImage : null
     },
 
     electronic_rock: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
-        albumImage      : ['resources/images/electronicrock.jpg', null],
+        albumImage      : ['resources/images/album/electronicrock.jpg', null],
         backgroundImage : null
     },
 
     fusion_jazz: {
         musician        : [null, null],
         audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
-        albumImage      : ['resources/images/jazzfusion.jpg', null],
+        albumImage      : ['resources/images/album/jazzfusion.jpg', null],
         backgroundImage : null
     }
 }
@@ -264,7 +264,7 @@ function run(plInformation, player) {
 }
 
 function handleMediaPlayButtonAction(pauseButton) {
-    if(pauseButtonPressed(pauseButton)){
+    if(isPauseButtonPressed(pauseButton)){
         pauseSong();
         $("#play").attr("class","glyphicon glyphicon-play aligned")
         status = 2;
@@ -339,6 +339,6 @@ function isOneGenre() {
     return (currentGenres.genre1 !== "");
 }
 
-function pauseButtonPressed(pauseButton) {
+function isPauseButtonPressed(pauseButton) {
     return status == 1 && pauseButton === true;
 }
