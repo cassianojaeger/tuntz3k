@@ -111,26 +111,47 @@ const musicInformation = {
     }
 };
 
+
+
+
 const musicGenres = {
-    gender1: {
-        text: "Rock",
-        color: ""
+    Rock: {
+        mainColor    : "#ff0000",
+        beforeColor  : "#cc0000",
+        afterColor   : "#ffb3b3",
+        pressedColor : "#cc0000",
+        shadorColor  : "#ffad99",
     },
-    gender2: {
-        text: "Country",
-        color: ""
+    Country: {
+        mainColor    : "#66ccff",
+        beforeColor  : "#b3ccff",
+        afterColor   : "#4d88ff",
+        pressedColor : "#0099e6",
+        shadorColor  : "#cce6ff",
+
     },
-    gender3: {
-        text: "Pop",
-        color: ""
+    Pop: {
+        mainColor    : "#ff33cc",
+        beforeColor  : "#ffccf2",
+        afterColor   : "#ff66d9",
+        pressedColor : "#990073",
+        shadorColor  : "#ffb3e6",
+
     },
-    gender4: {
-        text: "Jazz",
-        color: ""
+    Jazz: {
+        mainColor    : "#ff9900",
+        beforeColor  : "#ffd699",
+        afterColor   : "#ffebcc",
+        pressedColor : "#e68a00",
+        shadorColor  : "#ffe6cc",
+
     },
-    gender5: {
-        text: "Electronic",
-        color: ""
+    Electronic: {
+        mainColor    : "#00cc00",
+        beforeColor  : "#b3ffb3",
+        afterColor   : "#4dff4d",
+        pressedColor : "#008000",
+        shadorColor  : "#b3ffb3",
     }
 };
 
@@ -143,35 +164,66 @@ function insertTextInButton(sText, oButton) {
     oButton.textContent = sText;
 }
 
-function initializeMusicButtons() {
-    let aButtons = $(".confetti-button");
-    for (let i = 0; i < aButtons.length; i++) {
-        let currentButton = aButtons[i];
-        let sGenre = getMusicGenre(currentButton.id);
-        insertTextInButton(sGenre, currentButton);
+function createAllMusicButtons() {
+
+    var oPlaceToInsertButtons = $("#menu")[0];
+    for (let sGenre in musicGenres){
+        if (musicGenres[sGenre] === undefined){
+            break;
+        } else {
+            let oButton = createMusicButton({
+                elementProperties : musicGenres[sGenre], 
+                sId               : sGenre, 
+                onClickFunction  : addGender
+            });
+            
+            oPlaceToInsertButtons.appendChild(oButton);
+        }
+    }
+}
+
+function createMusicButton({elementProperties: oProperties, sId: sGenre, onClickFunction: fOnCLickFunction}){
+    let oNewButton  = document.createElement("BUTTON");
+    let oButtonText = document.createTextNode(sGenre);
+    
+    oNewButton.id   = sGenre;
+    oNewButton.appendChild(oButtonText);
+    oNewButton.classList.add("confetti-button");
+
+    oNewButton.style.setProperty("--main-bg-color"   , oProperties.mainColor);
+    oNewButton.style.setProperty("--before-bg-color" , oProperties.beforeColor);
+    oNewButton.style.setProperty("--after-bg-color"  , oProperties.afterColor);
+    oNewButton.style.setProperty("--active-bg-color" , oProperties.pressedColor);
+    oNewButton.style.setProperty("--shadow-color"    , oProperties.shadorColor);
+
+    oNewButton.onclick = function (event){fOnCLickFunction()};
+
+    return oNewButton;
+}
+
+function addAnimationEventToMusicButtons(){
+    var animateButton = function(e) {
+
+        e.preventDefault;
+        //reset animation
+        e.target.classList.remove('animate');
+
+        e.target.classList.add('animate');
+        setTimeout(function(){
+        e.target.classList.remove('animate');
+        },700);
     };
+
+    var classname = document.getElementsByClassName("confetti-button");
+
+    for (var i = 0; i < classname.length; i++) {
+      classname[i].addEventListener('click', animateButton, false);
+    }
 }
 
 $(document).ready(function () {
-    initializeMusicButtons();
-
-    var animateButton = function(e) {
-
-  e.preventDefault;
-  //reset animation
-  e.target.classList.remove('animate');
-
-  e.target.classList.add('animate');
-  setTimeout(function(){
-    e.target.classList.remove('animate');
-  },700);
-};
-
-var classname = document.getElementsByClassName("confetti-button");
-
-for (var i = 0; i < classname.length; i++) {
-  classname[i].addEventListener('click', animateButton, false);
-}
+    createAllMusicButtons();
+    addAnimationEventToMusicButtons();
 });
 
 
@@ -197,24 +249,40 @@ function removeGenreFromList(sGenre) {
     }
 }
 
-function getMusicGenre(sMusicGenreProperty) {
-    return musicGenres[sMusicGenreProperty].text;
-}
-
 function addGender() {
-    let sClickSource = event.path[0].id;
-    let sMusicGenre = getMusicGenre(sClickSource);
+    let sMusicGenre = event.path[0].id;
 
     if (isGenreInList(sMusicGenre)) {
+        removePulseAnimation({id: sMusicGenre});
         removeGenreFromList(sMusicGenre);
 
     } else {
+
+        removePulseAnimation({id: currentGenres.genre2});
         addGenreInList(sMusicGenre);
+        addPulseAnimation({id: sMusicGenre});
     }
 
     changeGenreInView();
     playGenreMusic();
 }
+
+function removePulseAnimation({id: sObjectId}){
+    if (sObjectId !== undefined && sObjectId !== ""){
+        oElement = $("#"+ sObjectId)[0];
+        oElement.classList.remove("activeButton");
+
+    }
+}
+
+function addPulseAnimation({id: sObjectId}){
+    if (sObjectId !== undefined && sObjectId !== ""){
+        oElement = $("#"+ sObjectId)[0];
+        oElement.classList.add("activeButton");
+
+    }
+}
+
 
 function changeHeaderText({text: sText, objectId: sId}) {
     let header = $(sId);

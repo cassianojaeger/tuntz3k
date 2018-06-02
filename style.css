@@ -41,46 +41,6 @@ body h1, h2, h3{
   text-align: center;
 }
 
-#gender1{
-  --main-bg-color   : #ff0000;
-  --before-bg-color : #cc0000;
-  --after-bg-color  : #ffb3b3;
-  --active-bg-color : #cc0000;
-  --shadow-color    : #ffad99;
-}
-
-#gender2{
-  --main-bg-color   : #66ccff;
-  --before-bg-color : #b3ccff;
-  --after-bg-color  : #4d88ff;
-  --active-bg-color : #0099e6;
-  --shadow-color    : #cce6ff;
-}
-
-#gender3{
-  --main-bg-color   : #ff33cc;
-  --before-bg-color : #ffccf2;
-  --after-bg-color  : #ff66d9;
-  --active-bg-color : #990073;
-  --shadow-color    : #ffb3e6;
-}
-
-#gender4{
-  --main-bg-color   : #ff9900;
-  --before-bg-color : #ffd699;
-  --after-bg-color  : #ffebcc;
-  --active-bg-color : #e68a00;
-  --shadow-color    : #ffe6cc;
-}
-
-#gender5{
-  --main-bg-color   : #00cc00;
-  --before-bg-color : #b3ffb3;
-  --after-bg-color  : #4dff4d;
-  --active-bg-color : #008000;
-  --shadow-color    : #b3ffb3;
-}
-
 .hidden-content {
     visibility: hidden;
     display: none;
@@ -173,3 +133,16 @@ bottomBubbles {  0% {
 }
 }
 
+.activeButton{
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
