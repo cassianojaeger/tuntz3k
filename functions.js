@@ -261,6 +261,7 @@ function addGender() {
 
     changeGenreInView();
     playGenreMusic();
+    changeBackgroundImage();
 }
 
 function removePulseAnimation({id: sObjectId}){
@@ -339,24 +340,6 @@ function handleMediaPlayButtonAction(pauseButton) {
     }
 }
 
-function playNextSong() {
-    if (currentPlaylistIndex === len) {
-        currentPlaylistIndex = 0;
-    } else {
-        currentPlaylistIndex++;
-    }
-    run(currentPlaylistInformation, audioTag);
-}
-
-function playPreviousSong() {
-    if (currentPlaylistIndex === 0) {
-        currentPlaylistIndex = 0;
-    } else {
-        currentPlaylistIndex--;
-    }
-    run(currentPlaylistInformation, audioTag);
-}
-
 function resolveCurrentPlaylist() {
     let genre;
     if(!isTwoGenres()){
@@ -373,6 +356,28 @@ function determineMixedGenre(separator){
     aGenre = aGenre.join(separator);
 
     return aGenre;
+}
+
+function changeBackgroundImage() {
+
+}
+
+function playNextSong() {
+    if (currentPlaylistIndex === len) {
+        currentPlaylistIndex = 0;
+    } else {
+        currentPlaylistIndex++;
+    }
+    run(currentPlaylistInformation, audioTag);
+}
+
+function playPreviousSong() {
+    if (currentPlaylistIndex === 0) {
+        currentPlaylistIndex = 0;
+    } else {
+        currentPlaylistIndex--;
+    }
+    run(currentPlaylistInformation, audioTag);
 }
 
 function volumeUp() {
