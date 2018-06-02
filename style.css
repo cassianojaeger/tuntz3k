@@ -41,9 +41,6 @@ body h1, h2, h3{
   text-align: center;
 }
 
-/*rgba(255, 0, 130, 0.2)
-  rgba(255, 0, 130, 0.5)*/
-
 #gender1{
   --main-bg-color   : #ff0000;
   --before-bg-color : #cc0000;

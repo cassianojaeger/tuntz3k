@@ -7,8 +7,9 @@
         </script>
         <link rel="stylesheet" href="style.css">
         <script src="functions.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     </head>
     <body>
@@ -19,11 +20,17 @@
             <div id="contents">
                 <div class="infos">
                     <h2>Now Playing</h2>
-                    <h1 id="genre-playing">Pick Something :D</h1>
+                    <h1 id="genre-playing" class="display-3">Pick Something :D</h1>
                     <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
-                    <button type="button" onclick="playNextSong()" class="btn btn-primary btn-lg btn-inline">Play Next Song!</button>
-                    <button type="button" onclick="pauseSong()" class="btn btn-primary btn-lg btn-inline">Stop song!</button>
-                    <button type="button" onclick="playSong()" class="btn btn-primary btn-lg btn-inline">Resume song!</button>
+                    <button type="button" onclick="pauseSong()" class="btn btn-primary btn-lg btn-inline">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    <button type="button" onclick="playSong()" class="btn btn-primary btn-lg btn-inline">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button type="button" onclick="playNextSong()" class="btn btn-primary btn-lg btn-inline">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
                 </div>
             </div>
 
