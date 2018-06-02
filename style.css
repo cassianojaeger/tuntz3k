@@ -47,6 +47,8 @@ body h1, h2, h3{
 }
 
 .confetti-button {
+  text-transform: uppercase;
+  font-weight: bold;
   font-family: 'Helvetica', 'Arial', sans-serif;
   display: inline-block;
   font-size: 1em;
