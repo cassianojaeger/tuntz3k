@@ -12,36 +12,40 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div id="turntable">
-            <div id="contents">
-                <div class="infos">
-                    <h2>Now Playing</h2>
-                    <h1 id="genre-playing" class="display-3">Pick Something :D</h1>
-                    <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
+        <div id="image-container">
+        </div>
+        <div id="overlay">
+        </div>
+            <div id="turntable">
+                <div id="contents">
+                    <div class="infos">
+                        <h2>Now Playing</h2>
+                        <h1 id="genre-playing" class="display-3">Pick Something :D</h1>
+                        <h3 id="music-playing">And a Music Will Play <span id="artist">by: Some Artist</span></h3>
 
-                    <button onclick="playPreviousSong();" class="btn mediaCustomButtom">
-                        <span id="play-backward" class="glyphicon glyphicon-fast-backward aligned mediaCustomButtom"></span>
-                    </button>
-                    <button onclick="handleMediaPlayButtonAction(true);" class="btn mediaCustomButtom">
-                        <span title="Play" id="play-pause" class="glyphicon glyphicon-play aligned mediaCustomButtom"></span>
-                    </button>
-                    <button onclick="playNextSong();" class="btn mediaCustomButtom">
-                        <span id="play-forward" class="glyphicon glyphicon-fast-forward aligned mediaCustomButtom"></span>
-                    </button>
-                    <button onclick="volumeUp();" class="btn mediaCustomButtom">
-                        <span title="Volume Up" id="volumeup" class="glyphicon glyphicon-plus aligned mediaCustomButtom"></span>
-                    </button>
-                    <button onclick="volumeDown();" class="btn mediaCustomButtom">
-                        <span title="Volume Down" id="volumedown" class="glyphicon glyphicon-minus aligned mediaCustomButtom"></span>
-                    </button>
+                        <button onclick="playPreviousSong();" class="btn mediaCustomButtom">
+                            <span id="play-backward" class="glyphicon glyphicon-fast-backward aligned mediaCustomButtom"></span>
+                        </button>
+                        <button onclick="handleMediaPlayButtonAction(true);" class="btn mediaCustomButtom">
+                            <span title="Play" id="play-pause" class="glyphicon glyphicon-play aligned mediaCustomButtom"></span>
+                        </button>
+                        <button onclick="playNextSong();" class="btn mediaCustomButtom">
+                            <span id="play-forward" class="glyphicon glyphicon-fast-forward aligned mediaCustomButtom"></span>
+                        </button>
+                        <button onclick="volumeUp();" class="btn mediaCustomButtom">
+                            <span title="Volume Up" id="volumeup" class="glyphicon glyphicon-plus aligned mediaCustomButtom"></span>
+                        </button>
+                        <button onclick="volumeDown();" class="btn mediaCustomButtom">
+                            <span title="Volume Down" id="volumedown" class="glyphicon glyphicon-minus aligned mediaCustomButtom"></span>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div id="menu">
+
                 </div>
             </div>
-
-
-            <div id="menu">
-
-            </div>
-        </div>
 
         <audio class="hidden-content" id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
             Sorry, your browser does not support HTML5 audio.
