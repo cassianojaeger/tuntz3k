@@ -111,9 +111,6 @@ const musicInformation = {
     }
 };
 
-
-
-
 const musicGenres = {
     Rock: {
         mainColor    : "#ff0000",
