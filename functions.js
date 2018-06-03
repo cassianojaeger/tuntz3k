@@ -249,13 +249,18 @@ function addGender() {
 
     if (isGenreInList(sMusicGenre)) {
         removePulseAnimation({id: sMusicGenre});
+        removeSelectedAnimation({id: sMusicGenre});
         removeGenreFromList(sMusicGenre);
 
     } else {
 
         removePulseAnimation({id: currentGenres.genre2});
+        removePulseAnimation({id: currentGenres.genre2});
+
         addGenreInList(sMusicGenre);
         addPulseAnimation({id: sMusicGenre});
+        addSelectedAnimation({id: sMusicGenre});
+
     }
 
     changeGenrePlayingInView();
@@ -263,20 +268,34 @@ function addGender() {
     changeBackgroundImage();
 }
 
-function removePulseAnimation({id: sObjectId}){
+function removeClass({id: sObjectId, class: sClass}){
     if (sObjectId !== undefined && sObjectId !== ""){
         oElement = $("#"+ sObjectId)[0];
-        oElement.classList.remove("pulsingButton");
+        oElement.classList.remove(sClass);
+    }
+}
+
+function addClass({id: sObjectId, class: sClass}){
+     if (sObjectId !== undefined && sObjectId !== ""){
+        oElement = $("#"+ sObjectId)[0];
+        oElement.classList.add(sClass);
 
     }
 }
 
-function addPulseAnimation({id: sObjectId}){
-    if (sObjectId !== undefined && sObjectId !== ""){
-        oElement = $("#"+ sObjectId)[0];
-        oElement.classList.add("pulsingButton");
+function removeSelectedAnimation({id: sObjectId, class: sClasses}){
 
-    }
+}
+
+function addSelectedAnimation({id: sObjectId, class: sClasses}){
+
+}
+
+function removePulseAnimation({id: sObjectId}){
+
+}
+
+function addPulseAnimation({id: sObjectId}){
 }
 
 function changeHeaderText({text: sText, objectId: sId}) {
