@@ -9,105 +9,105 @@ const musicInformation = {
         musician        : ['Algum nome', null],
         audioFile       : ['resources/audios/rock%20Led%20Zeppelin%20-%20Rock%20And%20Roll%20(Live%20Video).mp3' ,'resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3'],
         albumImage      : ['resources/images/album/rock.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/rockbackground.jpg'
     },
 
     jazz: {
         musician        : [null, null],
         audioFile       : ['resources/audios/jazz%20Justin%20Hurwitzz%20-Whiplash%20Soundtrack%20-%20Caravan.mp3' ,'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
         albumImage      : ['resources/images/album/jazz.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/jazzbackground.jpg'
     },
 
     electronic: {
         musician        : [null, null],
         audioFile       : ['resources/audios/electronic%20Daft%20Punk%20-%20Harder%20Better%20Faster%20Stronger.mp3' ,'resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3'],
         albumImage      : ['resources/images/album/electronic.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/electronicbackground.jpg'
     },
 
     country: {
         musician        : [null, null],
         audioFile       : ['resources/audios/country%20Chris%20Stapleton%20-%20Tennessee%20Whiskey%20(Audio).mp3' ,'resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3'],
         albumImage      : ['resources/images/album/country.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/countrybackground.jpg'
     },
 
     pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/pop%20Britney%20Spears%20-%20Toxic%20(Official%20Video).mp3' ,'resources/audios/poprock%20Nickelback%20-%20Photograph.mp3'],
         albumImage      : ['resources/images/album/pop.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/popbackground.jpg'
     },
 
     country_rock: {
         musician        : 'Algum nome',
         audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
         albumImage      : ['resources/images/album/countrypop.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/countryrockbackground.jpg'
     },
 
     country_jazz: {
         musician        : [null, null],
         audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
         albumImage      : ['resources/images/album/southernjazz.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/southernjazzfusionbackground.jpg'
     },
 
     country_electronic: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
         albumImage      : 'resources/images/album/electroniccountry.jpg',
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/eletroniccountrybackground.jpg'
     },
 
     country_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
         albumImage      : ['resources/images/album/countrypop.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/countrypopbackground.jpg'
     },
 
     pop_rock: {
         musician        : [null, null],
         audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
         albumImage      : ['resources/images/album/poprock.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/poprockbackground.jpg'
     },
 
     jazz_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
         albumImage      : ['resources/images/album/jazzpop.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/jazzpopbackground.jpg'
     },
 
     electronic_pop: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
         albumImage      : ['resources/images/album/eletropop.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/eletropopbackground.jpg'
     },
 
     electronic_jazz: {
         musician        : [null, null],
         audioFile       : ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
         albumImage      : ['resources/images/album/nujazz.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/nujazzbackground.jpg'
     },
 
     electronic_rock: {
         musician        : [null, null],
         audioFile       : ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
         albumImage      : ['resources/images/album/electronicrock.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/eletronicrockbackground.jpg'
     },
 
     jazz_rock: {
         musician        : [null, null],
         audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
         albumImage      : ['resources/images/album/jazzfusion.jpg', null],
-        backgroundImage : null
+        backgroundImage : 'resources/images/background/jazzfusionbackground.jpg'
     }
 };
 
@@ -120,14 +120,14 @@ const musicGenres = {
         beforeColor  : "#cc0000",
         afterColor   : "#ffb3b3",
         pressedColor : "#cc0000",
-        shadorColor  : "#ffad99",
+        shadorColor  : "#ffad99"
     },
     Country: {
         mainColor    : "#66ccff",
         beforeColor  : "#b3ccff",
         afterColor   : "#4d88ff",
         pressedColor : "#0099e6",
-        shadorColor  : "#cce6ff",
+        shadorColor  : "#cce6ff"
 
     },
     Pop: {
@@ -135,7 +135,7 @@ const musicGenres = {
         beforeColor  : "#ffccf2",
         afterColor   : "#ff66d9",
         pressedColor : "#990073",
-        shadorColor  : "#ffb3e6",
+        shadorColor  : "#ffb3e6"
 
     },
     Jazz: {
@@ -143,7 +143,7 @@ const musicGenres = {
         beforeColor  : "#ffd699",
         afterColor   : "#ffebcc",
         pressedColor : "#e68a00",
-        shadorColor  : "#ffe6cc",
+        shadorColor  : "#ffe6cc"
 
     },
     Electronic: {
@@ -151,18 +151,14 @@ const musicGenres = {
         beforeColor  : "#b3ffb3",
         afterColor   : "#4dff4d",
         pressedColor : "#008000",
-        shadorColor  : "#b3ffb3",
+        shadorColor  : "#b3ffb3"
     }
 };
 
 let currentGenres = {
     genre1: "",
-    genre2: "",
-}
-
-function insertTextInButton(sText, oButton) {
-    oButton.textContent = sText;
-}
+    genre2: ""
+};
 
 function createAllMusicButtons() {
 
@@ -228,7 +224,7 @@ $(document).ready(function () {
 
 
 function isGenreInList(sGenre) {
-    return currentGenres.genre1 == sGenre || currentGenres.genre2 == sGenre;
+    return currentGenres.genre1 === sGenre || currentGenres.genre2 === sGenre;
 }
 
 function addGenreInList(sGenre) {
@@ -265,6 +261,7 @@ function addGender() {
 
     changeGenreInView();
     playGenreMusic();
+    changeBackgroundImage();
 }
 
 function removePulseAnimation({id: sObjectId}){
@@ -343,24 +340,6 @@ function handleMediaPlayButtonAction(pauseButton) {
     }
 }
 
-function playNextSong() {
-    if (currentPlaylistIndex == len) {
-        currentPlaylistIndex = 0;
-    } else {
-        currentPlaylistIndex++;
-    }
-    run(currentPlaylistInformation, audioTag, currentPlaylist);
-}
-
-function playPreviousSong() {
-    if (currentPlaylistIndex == 0) {
-        currentPlaylistIndex = 0;
-    } else {
-        currentPlaylistIndex--;
-    }
-    run(currentPlaylistInformation, audioTag, currentPlaylist);
-}
-
 function resolveCurrentPlaylist() {
     let genre;
     if(!isTwoGenres()){
@@ -374,9 +353,33 @@ function resolveCurrentPlaylist() {
 function determineMixedGenre(separator){
     let aGenre = [currentGenres.genre1, currentGenres.genre2];
     aGenre.sort();
-    aGenre = aGenre.join(separator)
+    aGenre = aGenre.join(separator);
 
     return aGenre;
+}
+
+function changeBackgroundImage() {
+    let sImage = "url("+currentPlaylistInformation.backgroundImage+")";
+
+    $('<style>body:after{background-image:'+sImage+'}</style>').appendTo('head');
+}
+
+function playNextSong() {
+    if (currentPlaylistIndex === len) {
+        currentPlaylistIndex = 0;
+    } else {
+        currentPlaylistIndex++;
+    }
+    run(currentPlaylistInformation, audioTag);
+}
+
+function playPreviousSong() {
+    if (currentPlaylistIndex === 0) {
+        currentPlaylistIndex = 0;
+    } else {
+        currentPlaylistIndex--;
+    }
+    run(currentPlaylistInformation, audioTag);
 }
 
 function volumeUp() {
@@ -408,5 +411,5 @@ function isOneGenre() {
 }
 
 function isPauseButtonPressed(pauseButton) {
-    return status == 1 && pauseButton === true;
+    return status === "1" && pauseButton === true;
 }
