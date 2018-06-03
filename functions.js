@@ -388,7 +388,10 @@ function determineMixedGenre(separator){
 function changeBackgroundImage() {
     let sImage = "url("+currentPlaylistInformation.backgroundImage+")";
 
-    $('<style>body:after{background-image:'+sImage+'}</style>').appendTo('head');
+    //$('<style>body:after{background-image:'+sImage+'; -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */-moz-animation: fadein 2s; /* Firefox < 16 */-ms-animation: fadein 2s; /* Internet Explorer */-o-animation: fadein 2s; /* Opera < 12.1 */ animation: fadein .2s;}@-webkit-keyframes fadein {from { opacity: 0; }to   { opacity: 1; }}</style>').appendTo('head');
+    let oImageContainer = $("#image-container")[0];
+    oImageContainer.style.backgroundImage = sImage;
+    //oImageContainer.fadeIn(); 
 }
 
 function playNextSong() {
