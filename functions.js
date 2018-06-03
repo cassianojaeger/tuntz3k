@@ -258,7 +258,7 @@ function addGender() {
         addPulseAnimation({id: sMusicGenre});
     }
 
-    changeGenreInView();
+    changeGenrePlayingInView();
     playGenreMusic();
     changeBackgroundImage();
 }
@@ -298,10 +298,17 @@ function getGenreCompleteText(){
     return sText;
 }
 
-function changeGenreInView() {
-    let sId = "#genre-playing";
+function changeGenrePlayingInView() {
     let sText = getGenreCompleteText;
-    changeHeaderText({text: sText, objectId: sId});
+    changeHeaderText({text: sText, objectId: "#genre-playing"});
+}
+
+function changeMusicPlayingInView({musicPlaying: sText}) {
+    changeHeaderText({text: sText, objectId: "#music-playing"});
+}
+
+function changeArtistPlayingInView({artistPlaying: sText}) {
+    changeHeaderText({text: sText, objectId: "#artist"});
 }
 
 function playGenreMusic() {
