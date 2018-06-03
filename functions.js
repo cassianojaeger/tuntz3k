@@ -338,13 +338,13 @@ function handleMediaPlayButtonAction(pauseButton) {
         pauseSong();
         removePulseAnimation({id: currentGenres.genre1});
         removePulseAnimation({id: currentGenres.genre2});
-        $("#play").attr("class","glyphicon glyphicon-play aligned mediaCustomButtom")
+        $("#play-pause").attr("class","glyphicon glyphicon-play aligned mediaCustomButtom")
         status = 2;
     }else {
         playSong();
         addPulseAnimation({id: currentGenres.genre1});
         addPulseAnimation({id: currentGenres.genre2});
-        $("#play").attr("class", "glyphicon glyphicon-pause aligned mediaCustomButtom")
+        $("#play-pause").attr("class", "glyphicon glyphicon-pause aligned mediaCustomButtom")
         status = 1;
     }
 }
