@@ -16,6 +16,8 @@ body h1, h2, h3{
 }
 
 #menu {
+  justify-content: center;
+  align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 3vw;

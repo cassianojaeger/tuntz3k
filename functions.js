@@ -255,7 +255,7 @@ function addGender() {
     } else {
 
         removePulseAnimation({id: currentGenres.genre2});
-        removePulseAnimation({id: currentGenres.genre2});
+        removeSelectedAnimation({id: currentGenres.genre2});
 
         addGenreInList(sMusicGenre);
         addPulseAnimation({id: sMusicGenre});
@@ -279,23 +279,23 @@ function addClass({id: sObjectId, class: sClass}){
      if (sObjectId !== undefined && sObjectId !== ""){
         oElement = $("#"+ sObjectId)[0];
         oElement.classList.add(sClass);
-
     }
 }
 
-function removeSelectedAnimation({id: sObjectId, class: sClasses}){
-
+function removeSelectedAnimation({id: sObjectId}){
+    removeClass({id: sObjectId, class: "selected"})
 }
 
-function addSelectedAnimation({id: sObjectId, class: sClasses}){
-
+function addSelectedAnimation({id: sObjectId}){
+    addClass({id: sObjectId, class: "selected"})
 }
 
 function removePulseAnimation({id: sObjectId}){
-
+    removeClass({id: sObjectId, class: "pulsingButton"})
 }
 
 function addPulseAnimation({id: sObjectId}){
+    addClass({id: sObjectId, class: "pulsingButton"})
 }
 
 function changeHeaderText({text: sText, objectId: sId}) {
