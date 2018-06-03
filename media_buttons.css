@@ -105,15 +105,19 @@ body
 
 
 /**/
+
 .confetti-button {
+
+  margin: auto;
+  width: 82%;
+  height: 48%;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  display: inline-block;
-  font-size: 1.5em;
-  padding: 1em 2em;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+
+  font-size: 2.5vh;
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--main-bg-color);
@@ -198,14 +202,26 @@ body
         }
     }
 
-.pulsingButton{
-    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+.confetti-button.selected{
+  height : 75%;
+  width  : 90%;
+  font-size: 3vh;
+  margin: auto;
+  transition         : height .2s, width .2s, font-size .2s;
+  -webkit-transition : height .2s, width .2s, font-size .2s;
+  -moz-transition    : height .2s, width .2s, font-size .2s;
+  -ms-animation      : height .2s, width .2s, font-size .2s;
 }
 
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+.pulsingButton{
+    -webkit-animation : pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation    : pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation     : pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation         : pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@-webkit-keyframes  pulse {to {box-shadow: 0 0 0 65px rgba(0, 0, 0, 0);}}
+@-moz-keyframes     pulse {to {box-shadow: 0 0 0 65px rgba(0, 0, 0, 0);}}
+@-ms-keyframes      pulse {to {box-shadow: 0 0 0 65px rgba(0, 0, 0, 0);}}
+@keyframes          pulse {to {box-shadow: 0 0 0 65px rgba(0, 0, 0, 0);}}

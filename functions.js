@@ -249,13 +249,17 @@ function addGender() {
 
     if (isGenreInList(sMusicGenre)) {
         removePulseAnimation({id: sMusicGenre});
+        removeSelectedAnimation({id: sMusicGenre});
         removeGenreFromList(sMusicGenre);
 
     } else {
 
         removePulseAnimation({id: currentGenres.genre2});
+        removeSelectedAnimation({id: currentGenres.genre2});
+
         addGenreInList(sMusicGenre);
         addPulseAnimation({id: sMusicGenre});
+        addSelectedAnimation({id: sMusicGenre});
     }
 
     changeGenrePlayingInView();
@@ -263,23 +267,37 @@ function addGender() {
     changeBackgroundImage();
 }
 
-function removePulseAnimation({id: sObjectId}){
+function removeClass({id: sObjectId, class: sClass}){
     if (sObjectId !== undefined && sObjectId !== ""){
         oElement = $("#"+ sObjectId)[0];
-        oElement.classList.remove("pulsingButton");
-
+        oElement.classList.remove(sClass);
     }
+}
+
+function addClass({id: sObjectId, class: sClass}){
+     if (sObjectId !== undefined && sObjectId !== ""){
+        oElement = $("#"+ sObjectId)[0];
+        oElement.classList.add(sClass);
+    }
+}
+
+function removeSelectedAnimation({id: sObjectId}){
+    removeClass({id: sObjectId, class: "selected"})
+}
+
+function addSelectedAnimation({id: sObjectId}){
+    addClass({id: sObjectId, class: "selected"})
+}
+
+function removePulseAnimation({id: sObjectId}){
+    removeClass({id: sObjectId, class: "pulsingButton"})
 }
 
 function addPulseAnimation({id: sObjectId}){
-    if (sObjectId !== undefined && sObjectId !== ""){
-        oElement = $("#"+ sObjectId)[0];
-        oElement.classList.add("pulsingButton");
-
-    }
+    addClass({id: sObjectId, class: "pulsingButton"})
 }
 
-function changeHeaderText({text: sText, objectId: sId}) {
+function changeElementText({text: sText, objectId: sId}) {
     let header = $(sId);
     header.text(sText);
 }
@@ -300,15 +318,15 @@ function getGenreCompleteText(){
 
 function changeGenrePlayingInView() {
     let sText = getGenreCompleteText;
-    changeHeaderText({text: sText, objectId: "#genre-playing"});
+    changeElementText({text: sText, objectId: "#genre-playing"});
 }
 
 function changeMusicPlayingInView({musicPlaying: sText}) {
-    changeHeaderText({text: sText, objectId: "#music-playing"});
+    changeElementText({text: sText, objectId: "#music-playing"});
 }
 
 function changeArtistPlayingInView({artistPlaying: sText}) {
-    changeHeaderText({text: sText, objectId: "#artist"});
+    changeElementText({text: sText, objectId: "#artist"});
 }
 
 function playGenreMusic() {
