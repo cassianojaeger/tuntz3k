@@ -266,7 +266,7 @@ function addGender() {
 function removePulseAnimation({id: sObjectId}){
     if (sObjectId !== undefined && sObjectId !== ""){
         oElement = $("#"+ sObjectId)[0];
-        oElement.classList.remove("activeButton");
+        oElement.classList.remove("pulsingButton");
 
     }
 }
@@ -274,7 +274,7 @@ function removePulseAnimation({id: sObjectId}){
 function addPulseAnimation({id: sObjectId}){
     if (sObjectId !== undefined && sObjectId !== ""){
         oElement = $("#"+ sObjectId)[0];
-        oElement.classList.add("activeButton");
+        oElement.classList.add("pulsingButton");
 
     }
 }
