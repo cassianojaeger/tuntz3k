@@ -6,7 +6,7 @@ var status = 0;
 
 const musicInformation = {
     rock: {
-        musician        : ['Algum nome', null],
+        musician        : [null, null],
         audioFile       : ['resources/audios/rock%20Led%20Zeppelin%20-%20Rock%20And%20Roll%20(Live%20Video).mp3' ,'resources/audios/rock%20Harem%20Scarem%20-%20No%20Justice.mp3'],
         albumImage      : ['resources/images/album/rock.jpg', 'resources/images/album/rock2.jpg'],
         backgroundImage : 'resources/images/background/rockbackground.jpg'
@@ -41,7 +41,7 @@ const musicInformation = {
     },
 
     country_rock: {
-        musician        : ['Algum nome', null],
+        musician        : [null, null],
         audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/countryrock%20Lonnie%20Mack%20-%20Too%20Rock%20For%20Country%20Too%20Country%20For%20Rock%20And%20Roll.mp3'],
         albumImage      : ['resources/images/album/countrypop.jpg', 'resources/images/album/countrypop2.jpg'],
         backgroundImage : 'resources/images/background/countryrockbackground.jpg'
