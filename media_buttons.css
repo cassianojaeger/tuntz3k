@@ -23,7 +23,7 @@ body
 #seconds {
     font-size:10px;
 }
-.btn-custom {
+.mediaCustomButtom {
     background-color: black;
     color:white;
     transition-property: background, opacity;
@@ -31,15 +31,20 @@ body
     outline: none;
 } 
 
-.btn-custom:hover{
+.mediaCustomButtom:hover{
     cursor: pointer;
     opacity: 0.5;
     color:white;
   }
 
-  .btn-custom:focus, .btn-custom:active{
-    opacity: 1 !important;
+  .mediaCustomButtom:focus{
+    opacity: 1.0 !important;
   }
+   .mediaCustomButtom:active{
+
+    opacity: 1.0 !important;
+    outline: 0;
+   }
 
 @-webkit-keyframes fadeIn {
     from {opacity: 0;}
