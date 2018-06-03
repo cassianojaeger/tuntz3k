@@ -108,6 +108,12 @@ const musicInformation = {
         audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', 'resources/audios/jazz%20fusion%20t-square%20little%20league%20star.mp3'],
         albumImage      : ['resources/images/album/jazzfusion.jpg', 'resources/images/album/jazzfusion2.jpg'],
         backgroundImage : 'resources/images/background/jazzfusionbackground.jpg'
+    },
+    no_genre: {
+        musician        : ['And a Music Will Play by: Some Artist', null],
+        audioFile       : [null, null],
+        albumImage      : [null, null],
+        backgroundImage :  null
     }
 };
 
@@ -299,6 +305,10 @@ function changeElementText({text: sText, objectId: sId}) {
     header.text(sText);
 }
 
+function changeElementImage({image: oImage, objectId: sId}) {
+    return null;
+}
+
 function getGenreCompleteText(){
     let sId = "#genre-playing";
     let sText;
@@ -322,8 +332,9 @@ function changeMusicPlayingInView({musicPlaying: sText}) {
     changeElementText({text: sText, objectId: "#music-playing"});
 }
 
-function changeArtistPlayingInView({artistPlaying: sText}) {
-    changeElementText({text: sText, objectId: "#artist"});
+function changeArtistPlayingInView(oMusician) {
+    changeElementText({text: oMusician.text, objectId: "#music-playing"});
+    changeElementImage({image: oMusician.image, objectId: "#album"});
 }
 
 function playGenreMusic() {
@@ -346,6 +357,9 @@ function run(plInformation, player) {
     player.src = getMusicFile(plInformation);
     audioTag.load();
     handleMediaPlayButtonAction();
+
+    let oMusicianInformation = getCurrentMusicianInformation()
+    changeArtistPlayingInView(oMusicianInformation)
 }
 
 function handleMediaPlayButtonAction(pauseButton) {
@@ -371,6 +385,9 @@ function resolveCurrentPlaylist() {
     } else{
         genre = determineMixedGenre("_");
     }
+    if (genre === ""){
+        genre = "no_genre";
+    }
     return genre;
 }
 
@@ -385,10 +402,15 @@ function determineMixedGenre(separator){
 function changeBackgroundImage() {
     let sImage = "url("+currentPlaylistInformation.backgroundImage+")";
 
-    //$('<style>body:after{background-image:'+sImage+'; -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */-moz-animation: fadein 2s; /* Firefox < 16 */-ms-animation: fadein 2s; /* Internet Explorer */-o-animation: fadein 2s; /* Opera < 12.1 */ animation: fadein .2s;}@-webkit-keyframes fadein {from { opacity: 0; }to   { opacity: 1; }}</style>').appendTo('head');
     let oImageContainer = $("#image-container")[0];
     oImageContainer.style.backgroundImage = sImage;
-    //oImageContainer.fadeIn(); 
+}
+
+function getCurrentMusicianInformation() {
+    let sText = currentPlaylistInformation.musician[currentPlaylistIndex];
+    let oImage = currentPlaylistInformation.albumImage[currentPlaylistIndex]
+
+    return {text: sText, image: oImage};
 }
 
 function playNextSong() {
