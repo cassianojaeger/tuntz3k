@@ -7,106 +7,106 @@ var status = 0;
 const musicInformation = {
     rock: {
         musician        : ['Algum nome', null],
-        audioFile       : ['resources/audios/rock%20Led%20Zeppelin%20-%20Rock%20And%20Roll%20(Live%20Video).mp3' ,'resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3'],
-        albumImage      : ['resources/images/album/rock.jpg', null],
+        audioFile       : ['resources/audios/rock%20Led%20Zeppelin%20-%20Rock%20And%20Roll%20(Live%20Video).mp3' ,'resources/audios/rock%20Harem%20Scarem%20-%20No%20Justice.mp3'],
+        albumImage      : ['resources/images/album/rock.jpg', 'resources/images/album/rock2.jpg'],
         backgroundImage : 'resources/images/background/rockbackground.jpg'
     },
 
     jazz: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/jazz%20Justin%20Hurwitzz%20-Whiplash%20Soundtrack%20-%20Caravan.mp3' ,'resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3'],
-        albumImage      : ['resources/images/album/jazz.jpg', null],
+        audioFile       : ['resources/audios/jazz%20Justin%20Hurwitzz%20-Whiplash%20Soundtrack%20-%20Caravan.mp3' ,'resources/audios/jazz%20Ryo%20Fukui%20-%20It%20Could%20Happen%20To%20You.mp3'],
+        albumImage      : ['resources/images/album/jazz.jpg', 'resources/images/album/jazz2.jpg'],
         backgroundImage : 'resources/images/background/jazzbackground.jpg'
     },
 
     electronic: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/electronic%20Daft%20Punk%20-%20Harder%20Better%20Faster%20Stronger.mp3' ,'resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3'],
-        albumImage      : ['resources/images/album/electronic.jpg', null],
+        audioFile       : ['resources/audios/electronic%20Daft%20Punk%20-%20Harder%20Better%20Faster%20Stronger.mp3' ,'resources/audios/electronic%20DATADEBT%20-%20California%20Special%20(Eumig%20%20Chinon%20Remix).mp3'],
+        albumImage      : ['resources/images/album/electronic.jpg', 'resources/images/album/electronic2.jpg'],
         backgroundImage : 'resources/images/background/electronicbackground.jpg'
     },
 
     country: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/country%20Chris%20Stapleton%20-%20Tennessee%20Whiskey%20(Audio).mp3' ,'resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3'],
-        albumImage      : ['resources/images/album/country.jpg', null],
+        audioFile       : ['resources/audios/country%20Chris%20Stapleton%20-%20Tennessee%20Whiskey%20(Audio).mp3' ,'resources/audios/country%20Blues%20Saraceno%20-%20Dogs%20of%20War.mp3'],
+        albumImage      : ['resources/images/album/country.jpg', 'resources/images/album/country2.jpg'],
         backgroundImage : 'resources/images/background/countrybackground.jpg'
     },
 
     pop: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/pop%20Britney%20Spears%20-%20Toxic%20(Official%20Video).mp3' ,'resources/audios/poprock%20Nickelback%20-%20Photograph.mp3'],
-        albumImage      : ['resources/images/album/pop.jpg', null],
+        audioFile       : ['resources/audios/pop%20Britney%20Spears%20-%20Toxic%20(Official%20Video).mp3' ,'resources/audios/pop%20Ariana%20Grande%20-%20Focus.mp3'],
+        albumImage      : ['resources/images/album/pop.jpg', 'resources/images/album/pop2.jpg'],
         backgroundImage : 'resources/images/background/popbackground.jpg'
     },
 
     country_rock: {
-        musician        : 'Algum nome',
-        audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', null],
-        albumImage      : ['resources/images/album/countrypop.jpg', null],
+        musician        : ['Algum nome', null],
+        audioFile       : ['resources/audios/countryrock%20Eduardo%20Ara%C3%BAjo%20(com%20Dr.%20Sin)%20-%20Meu%20Cavalo.mp3', 'resources/audios/countryrock%20Lonnie%20Mack%20-%20Too%20Rock%20For%20Country%20Too%20Country%20For%20Rock%20And%20Roll.mp3'],
+        albumImage      : ['resources/images/album/countrypop.jpg', 'resources/images/album/countrypop2.jpg'],
         backgroundImage : 'resources/images/background/countryrockbackground.jpg'
     },
 
     country_jazz: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', null],
-        albumImage      : ['resources/images/album/southernjazz.jpg', null],
+        audioFile       : ['resources/audios/southernjazzfusion%20Dixie%20Dregs%20-%20Road%20Expense.mp3', 'resources/audios/southernjazzfusion%20General%20Lee%20The%20Steve%20Morse%20Band.mp3'],
+        albumImage      : ['resources/images/album/southernjazz.jpg', 'resources/images/album/southernjazz2.jpg'],
         backgroundImage : 'resources/images/background/southernjazzfusionbackground.jpg'
     },
 
     country_electronic: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', null],
-        albumImage      : 'resources/images/album/electroniccountry.jpg',
+        audioFile       : ['resources/audios/eletronic%20country%20Audien%20-%20Something%20Better%20ft.%20Lady%20Antebellum.mp3', 'resources/audios/electroniccountry%20Gazzo%20Featuring%20Chase%20Rice%20-%20Sun%20Turns%20Cold.mp3'],
+        albumImage      : ['resources/images/album/electroniccountry.jpg', 'resources/images/album/electroniccountry2.jpg'],
         backgroundImage : 'resources/images/background/eletroniccountrybackground.jpg'
     },
 
     country_pop: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', null],
-        albumImage      : ['resources/images/album/countrypop.jpg', null],
+        audioFile       : ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', 'resources/audios/country%20pop%20Lady%20Gaga%20-%20Joanne%20(Audio).mp3'],
+        albumImage      : ['resources/images/album/countrypop.jpg', 'resources/images/album/countrypop2.jpg'],
         backgroundImage : 'resources/images/background/countrypopbackground.jpg'
     },
 
     pop_rock: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', null],
-        albumImage      : ['resources/images/album/poprock.jpg', null],
+        audioFile       : ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', 'resources/audios/poprock%20Fall%20Out%20Boy%20-%20Dance%20Dance%20Lyrics.mp3'],
+        albumImage      : ['resources/images/album/poprock.jpg', 'resources/images/album/poprock2.jpg'],
         backgroundImage : 'resources/images/background/poprockbackground.jpg'
     },
 
     jazz_pop: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/jazzpop%20george-duke-shine-on.mp3', null],
-        albumImage      : ['resources/images/album/jazzpop.jpg', null],
+        audioFile       : ['resources/audios/jazzpop%20george-duke-shine-on.mp3', 'resources/audios/jazzpop%20Street%20Life%20-%20The%20Crusaders%201979.mp3'],
+        albumImage      : ['resources/images/album/jazzpop.jpg', 'resources/images/album/jazzpop2.jpg'],
         backgroundImage : 'resources/images/background/jazzpopbackground.jpg'
     },
 
     electronic_pop: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', null],
-        albumImage      : ['resources/images/album/eletropop.jpg', null],
+        audioFile       : ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', 'resources/audios/electropop%20lonelyisland%20Jizz%20In%20My%20Pants.mp3'],
+        albumImage      : ['resources/images/album/eletropop.jpg', 'resources/images/album/eletropop2.jpg'],
         backgroundImage : 'resources/images/background/eletropopbackground.jpg'
     },
 
     electronic_jazz: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', null],
-        albumImage      : ['resources/images/album/nujazz.jpg', null],
+        audioFile       : ['resources/audios/nujazz%20Bonobo%20-%20Kiara.mp3', 'resources/audios/nujazz%20Quantic%20-%20Transatlantic.mp3'],
+        albumImage      : ['resources/images/album/nujazz.jpg', 'resources/images/album/nujazz2.jpg'],
         backgroundImage : 'resources/images/background/nujazzbackground.jpg'
     },
 
     electronic_rock: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/eletronicrock%20M83%20Reunion.mp3', null],
-        albumImage      : ['resources/images/album/electronicrock.jpg', null],
+        audioFile       : ['resources/audios/eletronicrock%20M83%20Reunion.mp3', 'resources/audios/electronicrock%20MGMT%20-%20Electric%20Feel.mp3'],
+        albumImage      : ['resources/images/album/electronicrock.jpg', 'resources/images/album/electronicrock2.jpg'],
         backgroundImage : 'resources/images/background/eletronicrockbackground.jpg'
     },
 
     jazz_rock: {
         musician        : [null, null],
-        audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', null],
-        albumImage      : ['resources/images/album/jazzfusion.jpg', null],
+        audioFile       : ['resources/audios/jazzfusion%20Casiopea%20-%20Galactic%20Funk.mp3', 'resources/audios/jazz%20fusion%20t-square%20little%20league%20star.mp3'],
+        albumImage      : ['resources/images/album/jazzfusion.jpg', 'resources/images/album/jazzfusion2.jpg'],
         backgroundImage : 'resources/images/background/jazzfusionbackground.jpg'
     }
 };
