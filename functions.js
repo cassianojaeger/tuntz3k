@@ -268,6 +268,9 @@ function addGender() {
     changeGenrePlayingInView();
     playGenreMusic();
     changeBackgroundImage();
+    var sColor1 = getGenreColor(currentGenres.genre1);
+    var sColor2 = getGenreColor(currentGenres.genre2);
+    changeBackgroundOverlay({color1: sColor1, color2: sColor2});
 }
 
 function removeClass({id: sObjectId, class: sClass}){
@@ -397,6 +400,34 @@ function determineMixedGenre(separator){
     aGenre = aGenre.join(separator);
 
     return aGenre;
+}
+
+function getGenreColor(sGenre){
+    let sColor;
+    if (sGenre === undefined || sGenre === ""){
+        sColor = "";
+    } else {
+        sColor = musicGenres[sGenre].mainColor;
+        if (sColor === undefined){
+            sColor = "";
+        }
+    }
+
+    return sColor;
+}
+
+function changeBackgroundOverlay({color1: sRGB1, color2: sRGB2}){
+    if(sRGB1 === "" || sRGB1 === undefined){
+        sRGB1 = "#fff";
+    }
+
+    if(sRGB2 === "" || sRGB2 === undefined){
+        sRGB2 = sRGB1;
+    }
+
+    var oElement = $("#overlay")[0];
+    oElement.style.background = "linear-gradient("+ sRGB2 + ", " + sRGB1 +")";
+
 }
 
 function changeBackgroundImage() {
