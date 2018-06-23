@@ -34,7 +34,7 @@
             console.error("Artyom couldn't be initialized: ", err);
         });
 
-        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic']).then((i) => {
+        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic', 'Pause Song', 'Resume Song', 'Next Song', 'Previous Song']).then((i) => {
             switch (i) {
                 case 0:
                     artyom.say("Lets Rock!");
@@ -56,6 +56,22 @@
                     artyom.say("Electronic Selected");
                     addGender("Electronic");
                     break;
+                case 5:
+                    artyom.say("Song Paused");
+                    pauseSong();
+                    break;
+                case 6:
+                    artyom.say("Song Resumed");
+                    playSong();
+                    break;   
+                case 7:
+                    artyom.say("Playing Next Song");
+                    playNextSong();
+                    break;  
+                case 8:
+                    artyom.say("Playing Previous Song");
+                    playPreviousSong();
+                    break;  
             }
         });
     </script>
