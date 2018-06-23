@@ -26,20 +26,23 @@
 
             // If providen, you can only trigger a command if you say its name
             // e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
-            name: "Jarvis"
+            //name: "Jarvis"
         }).then(() => {
             console.log("Artyom has been succesfully initialized");
         }).catch((err) => {
             console.error("Artyom couldn't be initialized: ", err);
         });
 
-        artyom.on(['Good morning', 'Good afternoon']).then((i) => {
+        artyom.on(['Good morning', 'Good afternoon', 'Who is the best?']).then((i) => {
             switch (i) {
                 case 0:
                     artyom.say("Good morning, how are you?");
                     break;
                 case 1:
                     artyom.say("Good afternoon, how are you?");
+                    break;
+                case 2:
+                    artyom.say("It is Cassiano, of Course!");
                     break;
             }
         });
