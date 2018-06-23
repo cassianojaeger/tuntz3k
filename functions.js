@@ -117,7 +117,7 @@ var musicInformation = {
     }
 };
 
-const musicGenres = {
+var musicGenres = {
     Rock: {
         mainColor: "#ff0000",
         beforeColor: "#cc0000",
@@ -256,7 +256,7 @@ function removeGenreFromList(sGenre) {
 function addGender(artyomInput) {
     let sMusicGenre = artyomInput;
     if(typeof artyomInput == 'undefined'){
-        let sMusicGenre = event.path[0].id;
+        sMusicGenre = event.path[0].id;
     }
 
     if (isGenreInList(sMusicGenre)) {
