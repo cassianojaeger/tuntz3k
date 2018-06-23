@@ -29,12 +29,12 @@
             //name: "Jarvis"
         }).then(() => {
             console.log("Artyom has been succesfully initialized");
-            artyom.say("Hello, I'm your personal music mushuper! Please, feel free to choose your desired music genre!");
+            artyom.say("Hello, I´m Artyom. Your voice assistant. Any doubt, say Explain voice commands");
         }).catch((err) => {
             console.error("Artyom couldn't be initialized: ", err);
         });
 
-        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic', 'Pause Song', 'Resume Song', 'Next Song', 'Previous Song']).then((i) => {
+        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic', 'Stop Song', 'Play Song', 'Next Song', 'Previous Song', 'Explain voice commands']).then((i) => {
             switch (i) {
                 case 0:
                     artyom.say("Lets Rock!");
@@ -61,7 +61,7 @@
                     pauseSong();
                     break;
                 case 6:
-                    artyom.say("Song Resumed");
+                    artyom.say("Playing Song");
                     playSong();
                     break;   
                 case 7:
@@ -72,6 +72,11 @@
                     artyom.say("Playing Previous Song");
                     playPreviousSong();
                     break;  
+                case 9:
+                    artyom.say("Rock... [Explaining commands]");
+                    break;  
+                    
+                    
             }
         });
     </script>
