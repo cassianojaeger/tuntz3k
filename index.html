@@ -1,30 +1,64 @@
 <html>
-    <meta charset="utf-8">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="media_buttons.css">
-        <script
-                src="https://code.jquery.com/jquery-3.3.1.js"
-                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-                crossorigin="anonymous">
-        </script>
-        <script src="functions.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div id="image-container">
-        </div>
-        <div id="overlay">
-        </div>
-            <div id="turntable">
-                <div id="contents">
-                    <div class="infos">
-                        <h2>Now Playing</h2>
-                        <h1 id="genre-playing" class="display-3">Pick Something :D</h1>
-                        <h3 id="music-playing">And a Music Will Play by: Some Artist</h3>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media_buttons.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
 
-                        <button onclick="playPreviousSong();" class="btn mediaCustomButtom">
+
+    </script>
+    <script src="functions.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="resources/artyom/artyom.window.js"></script>
+    <script>
+        var artyom = new Artyom();
+        //Jarvis.say("Hello World !");
+
+        // Start the commands !
+        artyom.initialize({
+            lang: "en-GB", // GreatBritain english
+            continuous: true, // Listen forever
+            soundex: true, // Use the soundex algorithm to increase accuracy
+            debug: true, // Show messages in the console
+            executionKeyword: "and do it now",
+            listen: true, // Start to listen commands !
+
+            // If providen, you can only trigger a command if you say its name
+            // e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
+            name: "Jarvis"
+        }).then(() => {
+            console.log("Artyom has been succesfully initialized");
+        }).catch((err) => {
+            console.error("Artyom couldn't be initialized: ", err);
+        });
+
+        artyom.on(['Good morning', 'Good afternoon']).then((i) => {
+            switch (i) {
+                case 0:
+                    artyom.say("Good morning, how are you?");
+                    break;
+                case 1:
+                    artyom.say("Good afternoon, how are you?");
+                    break;
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="image-container">
+    </div>
+    <div id="overlay">
+    </div>
+    <div id="turntable">
+        <div id="contents">
+            <div class="infos">
+                <h2>Now Playing</h2>
+                <h1 id="genre-playing" class="display-3">Pick Something :D</h1>
+                <h3 id="music-playing">And a Music Will Play by: Some Artist</h3>
+
+                <button onclick="playPreviousSong();" class="btn mediaCustomButtom">
                             <span id="play-backward" class="glyphicon glyphicon-fast-backward aligned mediaCustomButtom"></span>
                         </button>
                         <button onclick="handleMediaPlayButtonAction(true);" class="btn mediaCustomButtom">
