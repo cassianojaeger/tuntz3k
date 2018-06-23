@@ -34,16 +34,27 @@
             console.error("Artyom couldn't be initialized: ", err);
         });
 
-        artyom.on(['Good morning', 'Good afternoon', 'Who is the best']).then((i) => {
+        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic']).then((i) => {
             switch (i) {
                 case 0:
-                    artyom.say("Good morning, how are you?");
+                    artyom.say("Lets Rock!");
+                    addGender("Rock");
                     break;
                 case 1:
-                    artyom.say("Good afternoon, how are you?");
+                    artyom.say("Country Selected");
+                    addGender("Country");
                     break;
                 case 2:
-                    artyom.say("It is Cassiano, of Course!");
+                    artyom.say("Pop Selected");
+                    addGender("Pop");
+                    break;
+                case 3:
+                    artyom.say("Jazz Selected");
+                    addGender("Jazz");
+                    break;
+                case 4:
+                    artyom.say("Electronic Selected");
+                    addGender("Electronic");
                     break;
             }
         });

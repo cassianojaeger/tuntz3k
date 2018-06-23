@@ -253,8 +253,8 @@ function removeGenreFromList(sGenre) {
     }
 }
 
-function addGender() {
-    let sMusicGenre = event.path[0].id;
+function addGender(artyomInput) {
+    let sMusicGenre = event.path[0].id || artyomInput;
 
     if (isGenreInList(sMusicGenre)) {
         removePulseAnimation({
