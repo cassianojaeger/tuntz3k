@@ -166,6 +166,7 @@ let currentGenres = {
 function createAllMusicButtons() {
 
     var oPlaceToInsertButtons = $("#menu")[0];
+    audioTag = $('audio')[0];
     for (let sGenre in musicGenres) {
         if (musicGenres[sGenre] === undefined) {
             break;
@@ -412,7 +413,6 @@ function changeArtistPlayingInView(oMusician) {
 
 function playGenreMusic() {
     currentPlaylistIndex = 0;
-    audioTag = $('audio')[0];
 
     currentPlaylist = resolveCurrentPlaylist();
     currentPlaylistInformation = musicInformation[currentPlaylist.toLowerCase()];
@@ -421,13 +421,13 @@ function playGenreMusic() {
 
     audioTag.volume = 1;
 
-    run(currentPlaylistInformation, audioTag);
+    run(currentPlaylistInformation);
 
     audioTag.addEventListener('ended', playNextSong);
 }
 
-function run(plInformation, player) {
-    player.src = getMusicFile(plInformation);
+function run(plInformation) {
+    audioTag.src = getMusicFile(plInformation);
     audioTag.load();
     handleMediaPlayButtonAction();
 
