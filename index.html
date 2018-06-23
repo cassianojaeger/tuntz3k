@@ -1,4 +1,5 @@
 <html>
+<meta charset="utf-8">
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media_buttons.css">
@@ -42,7 +43,6 @@
                     break;
             }
         });
-
     </script>
 </head>
 
@@ -61,29 +61,30 @@
                 <button onclick="playPreviousSong();" class="btn mediaCustomButtom">
                             <span id="play-backward" class="glyphicon glyphicon-fast-backward aligned mediaCustomButtom"></span>
                         </button>
-                        <button onclick="handleMediaPlayButtonAction(true);" class="btn mediaCustomButtom">
+                <button onclick="handleMediaPlayButtonAction(true);" class="btn mediaCustomButtom">
                             <span title="Play" id="play-pause" class="glyphicon glyphicon-play aligned mediaCustomButtom"></span>
                         </button>
-                        <button onclick="playNextSong();" class="btn mediaCustomButtom">
+                <button onclick="playNextSong();" class="btn mediaCustomButtom">
                             <span id="play-forward" class="glyphicon glyphicon-fast-forward aligned mediaCustomButtom"></span>
                         </button>
-                        <button onclick="volumeUp();" class="btn mediaCustomButtom">
+                <button onclick="volumeUp();" class="btn mediaCustomButtom">
                             <span title="Volume Up" id="volumeup" class="glyphicon glyphicon-plus aligned mediaCustomButtom"></span>
                         </button>
-                        <button onclick="volumeDown();" class="btn mediaCustomButtom">
+                <button onclick="volumeDown();" class="btn mediaCustomButtom">
                             <span title="Volume Down" id="volumedown" class="glyphicon glyphicon-minus aligned mediaCustomButtom"></span>
                         </button>
-                    </div>
-                </div>
-
-
-                <div id="menu">
-
-                </div>
             </div>
+        </div>
 
-        <audio class="hidden-content" id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+
+        <div id="menu">
+
+        </div>
+    </div>
+
+    <audio class="hidden-content" id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
             Sorry, your browser does not support HTML5 audio.
         </audio>
-    </body>
+</body>
+
 </html>
