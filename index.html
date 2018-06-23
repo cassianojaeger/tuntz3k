@@ -33,7 +33,7 @@
             console.error("Artyom couldn't be initialized: ", err);
         });
 
-        artyom.on(['Good morning', 'Good afternoon', 'Who is the best?']).then((i) => {
+        artyom.on(['Good morning', 'Good afternoon', 'Who is the best']).then((i) => {
             switch (i) {
                 case 0:
                     artyom.say("Good morning, how are you?");
