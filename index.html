@@ -7,79 +7,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
 
     </script>
+    <script src="resources/artyom/artyom.window.js"></script>
     <script src="functions.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="resources/artyom/artyom.window.js"></script>
-    <script>
-        var artyom = new Artyom();
-        //Jarvis.say("Hello World !");
-
-        // Start the commands !
-        artyom.initialize({
-            lang: "en-GB", // GreatBritain english
-            continuous: true, // Listen forever
-            soundex: true, // Use the soundex algorithm to increase accuracy
-            debug: true, // Show messages in the console
-            executionKeyword: "and do it now",
-            listen: true, // Start to listen commands !
-
-            // If providen, you can only trigger a command if you say its name
-            // e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
-            //name: "Jarvis"
-        }).then(() => {
-            console.log("Artyom has been succesfully initialized");
-            artyom.say("Hello, I´m Artyom. Your voice assistant. Any doubt, say Explain voice commands");
-        }).catch((err) => {
-            console.error("Artyom couldn't be initialized: ", err);
-        });
-
-        artyom.on(['Rock', 'Country', 'Pop', 'Jazz', 'Electronic', 'Stop Song', 'Play Song', 'Next Song', 'Previous Song', 'Explain voice commands']).then((i) => {
-            switch (i) {
-                case 0:
-                    artyom.say("Lets Rock!");
-                    addGender("Rock");
-                    break;
-                case 1:
-                    artyom.say("Country Selected");
-                    addGender("Country");
-                    break;
-                case 2:
-                    artyom.say("Pop Selected");
-                    addGender("Pop");
-                    break;
-                case 3:
-                    artyom.say("Jazz Selected");
-                    addGender("Jazz");
-                    break;
-                case 4:
-                    artyom.say("Electronic Selected");
-                    addGender("Electronic");
-                    break;
-                case 5:
-                    artyom.say("Song Paused");
-                    pauseSong();
-                    break;
-                case 6:
-                    artyom.say("Playing Song");
-                    playSong();
-                    break;   
-                case 7:
-                    artyom.say("Playing Next Song");
-                    playNextSong();
-                    break;  
-                case 8:
-                    artyom.say("Playing Previous Song");
-                    playPreviousSong();
-                    break;  
-                case 9:
-                    artyom.say("Say the name of the genre to make it play. You also have the following commands: Stop song, play song, Next Song and Previous Song");
-                    break;  
-                    
-                    
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -112,7 +43,6 @@
             </div>
         </div>
 
-
         <div id="menu">
 
         </div>
@@ -120,7 +50,7 @@
 
     <audio class="hidden-content" id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
             Sorry, your browser does not support HTML5 audio.
-        </audio>
+    </audio>
 </body>
 
 </html>

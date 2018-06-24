@@ -133,7 +133,7 @@ var musicGenres = {
         shadorColor: "#cce6ff"
 
     },
-    Pop: {
+    Popular: {
         mainColor: "#ff33cc",
         beforeColor: "#ffccf2",
         afterColor: "#ff66d9",
@@ -158,7 +158,7 @@ var musicGenres = {
     }
 };
 
-let currentGenres = {
+var currentGenres = {
     genre1: "",
     genre2: ""
 };
@@ -227,9 +227,64 @@ function addAnimationEventToMusicButtons() {
     }
 }
 
+function setupArtyom() {
+     var artyom = new Artyom();
+        // Start the commands !
+        artyom.initialize({
+            lang: "en-GB", // GreatBritain english
+            continuous: true, // Listen forever
+            soundex: true, // Use the soundex algorithm to increase accuracy
+            debug: true, // Show messages in the console
+            executionKeyword: "and do it now",
+            listen: true, // Start to listen commands !
+
+        }).then(() => {
+            console.log("Artyom has been succesfully initialized");
+            artyom.say("Hello, I´m Artyom. Your voice assistant. Any doubt, say Explain voice commands");
+        }).catch((err) => {
+            console.error("Artyom couldn't be initialized: ", err);
+        });
+
+        artyom.on(['Rock', 'Country', 'Popular', 'Jazz', 'Electronic', 'Stop Song', 'Play Song', 'Next Song', 'Previous Song', 'Explain voice commands']).then((i) => {
+            switch (i) {
+                case 0:
+                    addGender("Rock");
+                    break;
+                case 1:
+                    addGender("Country");
+                    break;
+                case 2:
+                    addGender("Pop");
+                    break;
+                case 3:
+                    addGender("Jazz");
+                    break;
+                case 4:
+                    addGender("Electronic");
+                    break;
+                case 5:
+                    pauseSong();
+                    break;
+                case 6:
+                    playSong();
+                    break;   
+                case 7:
+                    playNextSong();
+                    break;  
+                case 8:
+                    playPreviousSong();
+                    break;  
+                case 9:
+                    artyom.say("Say the name of the genre to make it play. You also have the following commands: Stop song, play song, Next Song and Previous Song");
+                    break;    
+            }
+        });
+}
+
 $(document).ready(function () {
     createAllMusicButtons();
     addAnimationEventToMusicButtons();
+    setupArtyom();
 });
 
 function isGenreInList(sGenre) {
