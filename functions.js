@@ -33,7 +33,7 @@ var musicInformation = {
         backgroundImage: 'resources/images/background/countrybackground.jpg'
     },
 
-    pop: {
+    popular: {
         musician: ['Britney Spears - Toxic', 'Ariana Grande - Focus'],
         audioFile: ['resources/audios/pop%20Britney%20Spears%20-%20Toxic%20(Official%20Video).mp3', 'resources/audios/pop%20Ariana%20Grande%20-%20Focus.mp3'],
         albumImage: ['resources/images/album/pop.jpg', 'resources/images/album/pop2.jpg'],
@@ -61,28 +61,28 @@ var musicInformation = {
         backgroundImage: 'resources/images/background/eletroniccountrybackground.jpg'
     },
 
-    country_pop: {
+    country_popular: {
         musician: ['Shania Twain - Man! I Feel Like A Woman', 'Lady Gaga - Joanne'],
         audioFile: ['resources/audios/countrypop%20Shania%20Twain%20-%20Man!%20I%20Feel%20Like%20A%20Woman.mp3', 'resources/audios/country%20pop%20Lady%20Gaga%20-%20Joanne%20(Audio).mp3'],
         albumImage: ['resources/images/album/countrypop.jpg', 'resources/images/album/countrypop2.jpg'],
         backgroundImage: 'resources/images/background/countrypopbackground.jpg'
     },
 
-    pop_rock: {
+    popular_rock: {
         musician: ['Nickelback - Photograph', 'Fall Out Boy - Dance Dance'],
         audioFile: ['resources/audios/poprock%20Nickelback%20-%20Photograph.mp3', 'resources/audios/poprock%20Fall%20Out%20Boy%20-%20Dance%20Dance%20Lyrics.mp3'],
         albumImage: ['resources/images/album/poprock.jpg', 'resources/images/album/poprock2.jpg'],
         backgroundImage: 'resources/images/background/poprockbackground.jpg'
     },
 
-    jazz_pop: {
+    jazz_popular: {
         musician: ['George Duke - Shine On', 'Street Life - The Crusaders'],
         audioFile: ['resources/audios/jazzpop%20george-duke-shine-on.mp3', 'resources/audios/jazzpop%20Street%20Life%20-%20The%20Crusaders%201979.mp3'],
         albumImage: ['resources/images/album/jazzpop.jpg', 'resources/images/album/jazzpop2.jpg'],
         backgroundImage: 'resources/images/background/jazzpopbackground.jpg'
     },
 
-    electronic_pop: {
+    electronic_popular: {
         musician: ['Owl City - Fireflies', 'Lonely Island - Jizz In My Pants'],
         audioFile: ['resources/audios/eletropop%20Owl%20City%20-%20Fireflies.mp3', 'resources/audios/electropop%20lonelyisland%20Jizz%20In%20My%20Pants.mp3'],
         albumImage: ['resources/images/album/eletropop.jpg', 'resources/images/album/eletropop2.jpg'],
@@ -254,7 +254,7 @@ function setupArtyom() {
                     addGender("Country");
                     break;
                 case 2:
-                    addGender("Pop");
+                    addGender("Popular");
                     break;
                 case 3:
                     addGender("Jazz");
@@ -632,3 +632,4 @@ function isOneGenre() {
 function isPauseButtonPressed(pauseButton) {
     return status === "1" && pauseButton === true;
 }
+
