@@ -284,7 +284,7 @@ function setupArtyom() {
 $(document).ready(function () {
     createAllMusicButtons();
     addAnimationEventToMusicButtons();
-    setupArtyom();
+    $('#warning-modal').click();
 });
 
 function isGenreInList(sGenre) {

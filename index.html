@@ -3,7 +3,9 @@
 <head>
     <link rel="icon" href="https://www.favicon.cc/logo3d/597286.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="media_buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
 
     </script>
@@ -14,6 +16,24 @@
 </head>
 
 <body>
+    <button id="warning-modal" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning" style="visibility: hidden">Warning</button>
+    <div id="modal-warning" class="modal modal-message modal-warning fade" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa fa-warning"></i>
+                </div>
+                <div class="modal-title">Artyom Voice Assistant</div>
+
+                <div class="modal-body">Do you want to enable voice commands?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="setupArtyom()">ACCEPT</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
+                </div>
+            </div> 
+        </div> 
+    </div>
+    
     <div id="image-container">
     </div>
     <div id="overlay">
