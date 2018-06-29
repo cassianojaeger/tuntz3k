@@ -164,7 +164,6 @@
     position          : absolute;
     content           : '';
     display           : block;
-    width             : 140%;
     height            : 100%;
     left              : -20%;
     z-index           : -1000;

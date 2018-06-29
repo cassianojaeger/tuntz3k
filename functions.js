@@ -123,14 +123,14 @@ var musicGenres = {
         beforeColor: "#cc0000",
         afterColor: "#ffb3b3",
         pressedColor: "#cc0000",
-        shadorColor: "#ffad99"
+        shadowColor: "#ffad99"
     },
     Country: {
         mainColor: "#66ccff",
         beforeColor: "#b3ccff",
         afterColor: "#4d88ff",
         pressedColor: "#0099e6",
-        shadorColor: "#cce6ff"
+        shadowColor: "#cce6ff"
 
     },
     Popular: {
@@ -138,7 +138,7 @@ var musicGenres = {
         beforeColor: "#ffccf2",
         afterColor: "#ff66d9",
         pressedColor: "#990073",
-        shadorColor: "#ffb3e6"
+        shadowColor: "#ffb3e6"
 
     },
     Jazz: {
@@ -146,7 +146,7 @@ var musicGenres = {
         beforeColor: "#ffd699",
         afterColor: "#ffebcc",
         pressedColor: "#e68a00",
-        shadorColor: "#ffe6cc"
+        shadowColor: "#ffe6cc"
 
     },
     Electronic: {
@@ -154,7 +154,7 @@ var musicGenres = {
         beforeColor: "#b3ffb3",
         afterColor: "#4dff4d",
         pressedColor: "#008000",
-        shadorColor: "#b3ffb3"
+        shadowColor: "#b3ffb3"
     }
 };
 
@@ -198,7 +198,7 @@ function createMusicButton({
     oNewButton.style.setProperty("--before-bg-color", oProperties.beforeColor);
     oNewButton.style.setProperty("--after-bg-color", oProperties.afterColor);
     oNewButton.style.setProperty("--active-bg-color", oProperties.pressedColor);
-    oNewButton.style.setProperty("--shadow-color", oProperties.shadorColor);
+    oNewButton.style.setProperty("--shadow-color", oProperties.shadowColor);
 
     oNewButton.onclick = function (event) {
         fOnCLickFunction()
@@ -284,7 +284,7 @@ function setupArtyom() {
 $(document).ready(function () {
     createAllMusicButtons();
     addAnimationEventToMusicButtons();
-    $('#warning-modal').click();
+    $('#modal-warning').modal();
 });
 
 function isGenreInList(sGenre) {
@@ -540,7 +540,7 @@ function getGenreColor(sGenre) {
     if (sGenre === undefined || sGenre === "") {
         sColor = "";
     } else {
-        sColor = musicGenres[sGenre].mainColor;
+        sColor = musicGenres[sGenre].afterColor;
         if (sColor === undefined) {
             sColor = "";
         }

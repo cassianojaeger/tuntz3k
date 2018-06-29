@@ -67,3 +67,17 @@ body h1, h2, h3{
     visibility     : hidden;
     display        : none;
 }
+
+#modal-btn1{
+  width: 90%;
+  padding: 0;
+  margin: 10px;
+  height: 7vh;
+}
+
+#modal-btn2{
+  width: 90%;
+  padding: 0;
+  margin: 10px;
+  height: 7vh;
+}

@@ -17,19 +17,15 @@
 </head>
 
 <body>
-    <button id="warning-modal" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning" style="visibility: hidden">Warning</button>
-    <div id="modal-warning" class="modal modal-message modal-warning fade" style="display: none;" aria-hidden="true">
+    <div id="modal-warning" class="modal fade" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="fa fa-warning"></i>
+                    <div class="modal-title">Do you want to enable voice commands?</div>
                 </div>
-                <div class="modal-title">Artyom Voice Assistant</div>
-
-                <div class="modal-body">Do you want to enable voice commands?</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="setupArtyom()">ACCEPT</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
+                    <button type="button" id="modal-btn1" class="btn btn-primary" data-dismiss="modal" onclick="setupArtyom()">Activate Voice Commands</button>
+                    <button type="button" id="modal-btn2" class="btn btn-success" data-dismiss="modal">Touch Only Commands</button>
                 </div>
             </div> 
         </div> 
